@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Life Super Multi Speciality Hospital — Fatehpur</title>
+<meta name="description" content="Prime Life Super Multi Speciality Hospital, Sultan Nagar, GT Road, Fatehpur (U.P.) — 24×7 emergency, senior specialists across 8 departments, ICU, pathology lab, pharmacy & ambulance. Call +91 9578473333.">
+<meta name="theme-color" content="#008B94">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23008B94'/%3E%3Cpath d='M6 21h8l3-7 5 13 3.5-8H34' stroke='white' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='31.5' cy='9.5' r='4' fill='%238CC63F'/%3E%3C/svg%3E">
+
+<!-- Fonts: Fraunces (display serif) + Archivo (UI sans) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brand: { DEFAULT:'#008B94', 50:'#EAF5F6', 100:'#D5EBED', 200:'#ABD7DB', 300:'#7FBFC5', 400:'#4FA6AE', 600:'#00777F', 700:'#00727A', 800:'#045A61', 900:'#04454B', 950:'#032E33' },
+        plum:  { DEFAULT:'#6A3993', 50:'#F5EEFA', 100:'#EBDDF5', 200:'#D7BBEB', 300:'#BC93DD', 500:'#8A52B3', 700:'#5A2F7D', 900:'#33194A' },
+        leaf:  { DEFAULT:'#8CC63F', 50:'#F4FAEA', 100:'#E8F4D4', 600:'#6FA32C', 700:'#598524' },
+        ink:   { DEFAULT:'#2D2D2D' },
+        mist:  '#F8F9FA'
+      },
+      fontFamily: {
+        display: ['Fraunces','Georgia','serif'],
+        sans: ['Archivo','ui-sans-serif','system-ui','sans-serif']
+      }
+    }
+  }
+}
+</script>
+
+<style>
+  :root{ --brand:#008B94; --plum:#6A3993; --leaf:#8CC63F; --ink:#2D2D2D; }
+  html{ scroll-behavior:smooth }
+  body{ font-family:'Archivo',ui-sans-serif,system-ui,sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased }
+  ::selection{ background:var(--brand); color:#fff }
+  :focus-visible{ outline:2px solid var(--leaf); outline-offset:2px; border-radius:4px }
+
+  .wrap{ max-width:80rem; margin-inline:auto; padding-inline:1.25rem }
+  @media(min-width:640px){ .wrap{ padding-inline:2rem } }
+  .eyebrow{ display:flex; align-items:center; gap:.75rem; font-size:11px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--plum) }
+  .eyebrow::before{ content:""; width:2rem; height:2px; background:var(--leaf); flex:none }
+  .eyebrow.on-dark{ color:#C9A6E8 } .eyebrow.leafy{ color:var(--leaf) }
+
+  /* faint "+" texture */
+  .plus-grid{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34'%3E%3Cpath d='M17 13.5v7M13.5 17h7' stroke='%23008B94' stroke-opacity='0.10' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") }
+  .plus-grid-dark{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34'%3E%3Cpath d='M17 13.5v7M13.5 17h7' stroke='%238CC63F' stroke-opacity='0.12' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") }
+
+  /* router pages */
+  .page{ display:none }
+  .page.active{ display:block; animation:pagein .5s cubic-bezier(.22,1,.36,1) both }
+  @keyframes pagein{ from{ opacity:0; transform:translateY(14px) } to{ opacity:1; transform:none } }
+
+  /* booking on/off switch */
+  .booking-hidden{ display:none !important }
+
+  /* nav underline */
+  .navlink{ position:relative; transition:color .25s }
+  .navlink::after{ content:""; position:absolute; left:0; right:100%; bottom:-7px; height:2px; background:var(--leaf); transition:right .3s cubic-bezier(.22,1,.36,1) }
+  .navlink:hover,.navlink.active{ color:var(--brand) }
+  .navlink.active::after{ right:0 }
+  .hdr-scrolled{ box-shadow:0 12px 30px -18px rgba(0,0,0,.28) }
+
+  /* scroll reveal */
+  .reveal{ opacity:0; transform:translateY(26px); transition:opacity .8s ease, transform .8s cubic-bezier(.22,1,.36,1); transition-delay:var(--d,0ms) }
+  .reveal.is-in{ opacity:1; transform:none }
+
+  /* ECG sweep */
+  .ecg-run{ stroke-dasharray:var(--dash,150) var(--gap,1290); animation:ecg var(--dur,6s) linear infinite }
+  @keyframes ecg{ from{ stroke-dashoffset:1440 } to{ stroke-dashoffset:0 } }
+
+  /* marquee */
+  .marquee-track{ display:flex; width:max-content; animation:marq 32s linear infinite }
+  .marquee:hover .marquee-track{ animation-play-state:paused }
+  @keyframes marq{ to{ transform:translateX(-50%) } }
+
+  /* duotone imagery */
+  .duo{ background:#00767E; position:relative; overflow:hidden }
+  .duo-plum{ background:#5B3080 }
+  .duo img{ filter:grayscale(1) contrast(1.05) brightness(1.03); mix-blend-mode:luminosity; width:100%; height:100%; object-fit:cover; transition:transform .8s cubic-bezier(.22,1,.36,1) }
+  .group:hover .duo img{ transform:scale(1.05) }
+
+  .chip{ display:inline-flex; align-items:center; gap:.35rem; font-size:11px; font-weight:600; letter-spacing:.02em; padding:.3rem .7rem; border-radius:999px }
+
+  /* accordion */
+  .acc-panel{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .55s cubic-bezier(.22,1,.36,1) }
+  .acc-item.acc-open .acc-panel{ grid-template-rows:1fr }
+  .acc-panel>div{ overflow:hidden }
+  .acc-icon{ transition:transform .4s cubic-bezier(.22,1,.36,1), background .3s, color .3s, border-color .3s }
+  .acc-item.acc-open .acc-icon{ transform:rotate(45deg); background:var(--brand); border-color:var(--brand); color:#fff }
+  .acc-item.acc-open .acc-num{ color:var(--brand) }
+  .acc-item.acc-open .acc-head{ background:#F8F9FA }
+
+  /* vitals */
+  .tick{ animation:tick .5s ease } @keyframes tick{ 0%{ opacity:.15; transform:translateY(4px) } 100%{ opacity:1; transform:none } }
+  .beat{ animation:beat 1.15s ease-in-out infinite; transform-origin:center } @keyframes beat{ 0%,100%{ transform:scale(1) } 18%{ transform:scale(1.16) } 36%{ transform:scale(1) } }
+
+  /* toasts */
+  .toast{ display:flex; align-items:flex-start; gap:.7rem; background:#20292A; color:#fff; padding:.8rem 1rem; border-radius:.9rem; box-shadow:0 18px 40px -12px rgba(0,0,0,.4); max-width:340px; font-size:.875rem; animation:toastin .45s cubic-bezier(.22,1,.36,1); transition:opacity .4s, transform .4s }
+  .toast.out{ opacity:0; transform:translateY(8px) }
+  .toast .t-ic{ flex:none; width:26px; height:26px; border-radius:999px; background:var(--leaf); color:#1E2A06; display:grid; place-items:center; margin-top:1px }
+  @keyframes toastin{ from{ opacity:0; transform:translateY(14px) scale(.97) } to{ opacity:1; transform:none } }
+
+  /* modal */
+  .modal{ position:fixed; inset:0; z-index:80; display:none; place-items:center; padding:1rem }
+  .modal.open{ display:grid }
+  .modal-back{ position:absolute; inset:0; background:rgba(18,30,31,.55); backdrop-filter:blur(4px) }
+  .modal-card{ position:relative; animation:pop .4s cubic-bezier(.22,1,.36,1) }
+  @keyframes pop{ from{ opacity:0; transform:translateY(20px) scale(.97) } to{ opacity:1; transform:none } }
+
+  /* drawer */
+  .drawer{ transform:translateX(105%); transition:transform .45s cubic-bezier(.22,1,.36,1) }
+  .drawer.open{ transform:none }
+
+  /* form fields */
+  .field{ width:100%; border:1px solid rgba(45,45,45,.16); border-radius:.75rem; padding:.7rem .9rem; font-size:.9rem; background:#fff; transition:border-color .25s, box-shadow .25s }
+  .field:focus{ outline:none; border-color:var(--brand); box-shadow:0 0 0 3px rgba(0,139,148,.14) }
+  .field.err{ border-color:#DC5A5A; box-shadow:0 0 0 3px rgba(220,90,90,.12) }
+  .err-msg{ color:#C0392B; font-size:12px; margin-top:.3rem; display:none }
+  .err-msg.show{ display:block }
+
+  /* doctor scroller */
+  .doc-row::-webkit-scrollbar{ height:6px }
+  .doc-row::-webkit-scrollbar-thumb{ background:rgba(0,139,148,.25); border-radius:99px }
+  .doc-row::-webkit-scrollbar-track{ background:transparent }
+
+  /* dept filter buttons */
+  .dept-btn .count{ margin-left:auto; font-size:11px; font-weight:600; padding:.05rem .5rem; border-radius:999px; background:rgba(45,45,45,.06) }
+  .dept-btn.active{ background:var(--brand); color:#fff }
+  .dept-btn.active .count{ background:rgba(255,255,255,.22); color:#fff }
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{ animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important }
+    .reveal{ opacity:1; transform:none }
+  }
+</style>
+</head>
+
+<body class="bg-white text-ink antialiased">
+
+<noscript><style>.page{display:block}</style><p style="background:#04454B;color:#fff;padding:.6rem 1rem;text-align:center;font-size:13px">JavaScript is disabled — all pages are shown below. Please enable JavaScript for navigation, filters and forms.</p></noscript>
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-brand focus:text-white focus:px-4 focus:py-2 focus:rounded-lg text-sm font-semibold">Skip to content</a>
+
+<!-- ==================== SVG ICON SPRITE ==================== -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 7h17M3.5 12h17M3.5 17h17"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-heart-pulse" viewBox="0 0 24 24"><path d="M20.4 5.2a5.2 5.2 0 0 0-7.4 0L12 6.2l-1-1a5.2 5.2 0 1 0-7.4 7.4l1 1L12 21l7.4-7.4 1-1a5.2 5.2 0 0 0 0-7.4z"/><path d="M7.5 12H10l1.5-2.5 2 4.5 1.5-2h2.5"/></symbol>
+  <symbol id="i-bone" viewBox="0 0 24 24"><path d="M16.8 9.9c.8-.8 2-.9 2.9-.3a2.9 2.9 0 1 0-4-4c.6.9.5 2.1-.3 2.9l-6.9 6.9c-.8.8-2 .9-2.9.3a2.9 2.9 0 1 0 4 4c-.6-.9-.5-2.1.3-2.9z"/></symbol>
+  <symbol id="i-baby" viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="3.5"/><path d="M10.6 7.8q1.4 1.1 2.8 0"/><path d="M6.8 21a5.2 5.2 0 0 1 10.4 0"/><path d="m9.2 13.5-1.2 1.5M14.8 13.5l1.2 1.5"/></symbol>
+  <symbol id="i-scalpel" viewBox="0 0 24 24"><path d="m17.5 3.5 3 3-9.2 9.2-3-3z"/><path d="M7.2 13.8 4 17c-.9.9-1 3.2-1 4 1 0 3.1-.1 4-1l3.2-3.2"/></symbol>
+  <symbol id="i-ambulance" viewBox="0 0 24 24"><path d="M2.5 16.5V7.5a1 1 0 0 1 1-1H14a1 1 0 0 1 1 1v9M15 9.5h3.1a1 1 0 0 1 .8.4l2.6 3.4a1 1 0 0 1 .2.6v3M2.5 16.5v.9M21.7 17v-.5"/><circle cx="6.3" cy="17.4" r="1.9"/><circle cx="17.4" cy="17.4" r="1.9"/><path d="M8.8 10.8h2.4M10 9.6v2.4"/></symbol>
+  <symbol id="i-microscope" viewBox="0 0 24 24"><path d="M6 18h8M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9.5 3h5"/><path d="M10 3v5.2L4.6 18a2 2 0 0 0 1.8 3h11.2a2 2 0 0 0 1.8-3L14 8.2V3"/><path d="M7.5 15h9"/></symbol>
+  <symbol id="i-pill" viewBox="0 0 24 24"><path d="m10.5 20.5-7-7a5 5 0 0 1 7-7l7 7a5 5 0 0 1-7 7Z"/><path d="m8.5 8.5 7 7"/></symbol>
+  <symbol id="i-stethoscope" viewBox="0 0 24 24"><path d="M5 3v5.5a4.5 4.5 0 0 0 9 0V3"/><path d="M3.2 3H5M14 3h1.8"/><path d="M9.5 13v2.5a4.8 4.8 0 0 0 9.6 0v-1.9"/><circle cx="19.1" cy="11" r="2.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 21.5s7.5-3 7.5-9.5V5.5L12 2.5l-7.5 3V12c0 6.5 7.5 9.5 7.5 9.5z"/><path d="m8.8 11.5 2.2 2.2 4.2-4.4"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M8 3v4M16 3v4M3.5 10h17"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="m9.2 13.6-1.4 7 4.2-2.4 4.2 2.4-1.4-7"/></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-4l-3 8L9 4l-3 8H2"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 5.5V20M3 10h14a4 4 0 0 1 4 4v6M3 16.5h18"/><path d="M7 10V8a1.5 1.5 0 0 1 1.5-1.5h2A1.5 1.5 0 0 1 12 8v2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7.5 9 6 9-6"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24"><path d="M11 7.5H8A3.5 3.5 0 0 0 4.5 11v5.5H11V11H7.8c.2-1.7 1.4-2.6 3.2-2.7z"/><path d="M19.5 7.5h-3A3.5 3.5 0 0 0 13 11v5.5h6.5V11h-3.2c.2-1.7 1.4-2.6 3.2-2.7z"/></symbol>
+  <symbol id="i-venus" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="5"/><path d="M12 13.5V21M8.8 17.8h6.4"/></symbol>
+  <symbol id="i-ear" viewBox="0 0 24 24"><path d="M6.5 9a5.5 5.5 0 0 1 11 0c0 4.5-4.5 4.5-4.5 8a3 3 0 0 1-6 0"/><path d="M13.5 9a2 2 0 0 0-4 0c0 1.5.9 2 1.6 2.7"/></symbol>
+  <symbol id="i-navigation" viewBox="0 0 24 24"><path d="m3.5 10.8 17-7.3-7.3 17-2.2-7.5z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V13M12 16.5h.01"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M15.5 4.5H14a3.5 3.5 0 0 0-3.5 3.5v3h-3v3.5h3v6H14v-6h2.5l.5-3.5h-3V8a1 1 0 0 1 1-1h2z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10.2 9.3l4.8 2.7-4.8 2.7z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.8 13.4L3 21l4.7-1.2A9 9 0 1 0 12 3z"/><path d="M9.2 8.4c-.3.1-.8.5-.8 1.4 0 2.7 3.6 6 6.2 5.9.9 0 1.3-.6 1.4-.9l-2-1.3-.9.8c-1.2-.5-2.4-1.7-2.8-2.9l.8-.8z" fill="currentColor" stroke="none"/></symbol>
+</svg>
+
+<!-- ==================== TOP EMERGENCY BAR ==================== -->
+<div class="bg-brand-900 text-white/85 text-xs">
+  <div class="wrap flex items-center justify-between gap-4 py-2">
+    <p class="hidden sm:flex items-center gap-1.5"><svg class="ic w-3.5 h-3.5 text-leaf"><use href="#i-pin"/></svg> Sultan Nagar, GT Road, Fatehpur — 212601 (U.P.)</p>
+    <p class="hidden lg:flex items-center gap-1.5"><svg class="ic w-3.5 h-3.5 text-leaf"><use href="#i-clock"/></svg> OPD: Mon – Sat, 9 AM – 8 PM</p>
+    <a href="tel:+919578473333" class="flex items-center gap-2 font-semibold hover:text-white transition">
+      <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-leaf opacity-70"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-leaf"></span></span>
+      <svg class="ic w-3.5 h-3.5"><use href="#i-phone"/></svg>
+      Emergency 24×7: +91 9578473333
+    </a>
+  </div>
+</div>
+
+<!-- ==================== HEADER ==================== -->
+<header id="hdr" class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-ink/5 transition-shadow">
+  <div class="wrap flex items-center justify-between h-[72px]">
+    <a href="#/home" class="flex items-center gap-3" aria-label="Prime Life Hospital — Home">
+      <svg viewBox="0 0 40 40" class="w-10 h-10 flex-none" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="37" height="37" rx="11" fill="#008B94"/>
+        <path d="M6 21h8l3-7 5 13 3.5-8H34" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="31.5" cy="9.5" r="4" fill="#8CC63F"/>
+      </svg>
+      <span class="leading-tight">
+        <span class="block font-display font-semibold text-[19px] text-ink">Prime Life</span>
+        <span class="block text-[9px] font-semibold tracking-[.2em] uppercase text-brand-700">Super Multi Speciality</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium" aria-label="Primary">
+      <a class="navlink" data-route="home" href="#/home">Home</a>
+      <a class="navlink" data-route="doctors" href="#/doctors">Find a Doctor</a>
+      <a class="navlink" data-route="services" href="#/services">Services &amp; Facilities</a>
+      <a class="navlink" data-route="contact" href="#/contact">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <!-- BOOKING: visible only while N8N_CONFIG.bookingEnabled = true -->
+      <button data-book-open class="booking-hidden hidden sm:inline-flex items-center gap-2 rounded-full bg-brand text-white px-5 py-2.5 text-sm font-semibold hover:bg-brand-700 transition">
+        <svg class="ic w-4 h-4"><use href="#i-calendar"/></svg> Book Appointment
+      </button>
+      <!-- BOOKING OFF: this call pill takes the header CTA slot instead -->
+      <a href="tel:+919578473333" id="hdrBookingFallback" class="booking-hidden hidden sm:inline-flex items-center gap-2 rounded-full bg-[#04343A] text-white px-5 py-2.5 text-sm font-semibold hover:bg-[#032A2E] transition">
+        <svg class="ic w-4 h-4 text-leaf"><use href="#i-phone"/></svg> Call: +91 9578473333
+      </a>
+      <button id="menuBtn" class="lg:hidden w-11 h-11 grid place-items-center rounded-xl border border-ink/10 text-ink hover:bg-mist transition" aria-label="Open menu">
+        <svg class="ic w-6 h-6"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== MOBILE DRAWER ==================== -->
+<div id="drawerBack" class="fixed inset-0 z-[60] bg-ink/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity"></div>
+<aside id="drawer" class="drawer fixed inset-y-0 right-0 z-[65] w-80 max-w-[86%] bg-white shadow-2xl flex flex-col" aria-label="Mobile menu">
+  <div class="flex items-center justify-between px-5 h-[72px] border-b border-ink/8">
+    <span class="font-display font-semibold text-lg">Menu</span>
+    <button id="drawerClose" class="w-10 h-10 grid place-items-center rounded-xl hover:bg-mist" aria-label="Close menu"><svg class="ic w-5 h-5"><use href="#i-close"/></svg></button>
+  </div>
+  <nav class="px-5 py-3 flex-1 overflow-y-auto" aria-label="Mobile navigation">
+    <a href="#/home" class="drawer-link flex items-center justify-between py-4 border-b border-ink/8 font-medium">Home <svg class="ic w-4 h-4 text-ink/30"><use href="#i-chevron-right"/></svg></a>
+    <a href="#/doctors" class="drawer-link flex items-center justify-between py-4 border-b border-ink/8 font-medium">Find a Doctor <svg class="ic w-4 h-4 text-ink/30"><use href="#i-chevron-right"/></svg></a>
+    <a href="#/services" class="drawer-link flex items-center justify-between py-4 border-b border-ink/8 font-medium">Services &amp; Facilities <svg class="ic w-4 h-4 text-ink/30"><use href="#i-chevron-right"/></svg></a>
+    <a href="#/contact" class="drawer-link flex items-center justify-between py-4 border-b border-ink/8 font-medium">Contact Us <svg class="ic w-4 h-4 text-ink/30"><use href="#i-chevron-right"/></svg></a>
+  </nav>
+  <div class="p-5 space-y-3 border-t border-ink/8">
+    <button data-book-open class="booking-hidden w-full inline-flex justify-center items-center gap-2 rounded-full bg-brand text-white px-5 py-3 text-sm font-semibold hover:bg-brand-700 transition">
+      <svg class="ic w-4 h-4"><use href="#i-calendar"/></svg> Book Appointment
+    </button>
+    <a href="tel:+919578473333" class="w-full inline-flex justify-center items-center gap-2 rounded-full bg-[#04343A] text-white px-5 py-3 text-sm font-semibold hover:bg-[#032A2E] transition">
+      <svg class="ic w-4 h-4 text-leaf"><use href="#i-phone"/></svg> Emergency: +91 9578473333
+    </a>
+  </div>
+</aside>
+
+<main id="main">
+
+<!-- ==================================================================
+     PAGE: HOME
+=================================================================== -->
+<section id="page-home" class="page" aria-label="Home">
+
+  <!-- HERO -->
+  <div class="bg-mist plus-grid overflow-hidden">
+    <div class="wrap pt-12 lg:pt-20 pb-4 grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div class="lg:col-span-6 reveal">
+        <span class="chip bg-plum-50 text-plum-700 border border-plum/15 mb-6">
+          <svg class="ic w-3.5 h-3.5"><use href="#i-pin"/></svg> Prime Life · Super Multi Speciality Hospital
+        </span>
+        <h1 class="font-display font-semibold tracking-tight leading-[1.08] text-[clamp(2.4rem,5.2vw,3.9rem)]">
+          Expert care for<br>
+          <span class="italic text-brand">every heartbeat</span> of<br>
+          Fatehpur.
+        </h1>
+        <p class="mt-6 text-ink/65 text-[17px] leading-relaxed max-w-xl">
+          Advanced diagnostics, modern operation theatres and senior specialists across eight
+          departments — with a 24×7 emergency that never sleeps. World-class treatment,
+          right on GT Road, close to home.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <!-- BOOKING: visible only while N8N_CONFIG.bookingEnabled = true -->
+          <button data-book-open class="booking-hidden inline-flex items-center gap-2.5 rounded-full bg-brand text-white px-7 py-3.5 font-semibold hover:bg-brand-700 transition shadow-lg shadow-brand/25">
+            <svg class="ic w-5 h-5"><use href="#i-calendar"/></svg> Book an Appointment
+          </button>
+          <a href="tel:+919578473333" class="inline-flex items-center gap-3 rounded-full bg-[#04343A] text-white pl-4 pr-6 py-3 hover:bg-[#032A2E] transition">
+            <span class="relative flex h-2.5 w-2.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-leaf opacity-70"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-leaf"></span></span>
+            <span class="leading-tight text-left">
+              <span class="block text-[10px] uppercase tracking-[.18em] text-white/60 font-semibold">Emergency 24×7</span>
+              <span class="block font-semibold">+91 9578473333</span>
+            </span>
+          </a>
+        </div>
+
+        <ul class="mt-8 flex flex-wrap gap-x-7 gap-y-2.5 text-sm text-ink/70">
+          <li class="flex items-center gap-2"><svg class="ic w-4 h-4 text-leaf-600"><use href="#i-check"/></svg> 24×7 Emergency &amp; Trauma</li>
+          <li class="flex items-center gap-2"><svg class="ic w-4 h-4 text-leaf-600"><use href="#i-check"/></svg> In-house Pharmacy &amp; Lab</li>
+          <li class="flex items-center gap-2"><svg class="ic w-4 h-4 text-leaf-600"><use href="#i-check"/></svg> ALS Ambulance on call</li>
+        </ul>
+      </div>
+
+      <!-- Hero visual: arch portrait + live vitals -->
+      <div class="lg:col-span-6 relative mt-6 lg:mt-0 reveal" style="--d:120ms">
+        <div class="absolute -right-3 -bottom-3 w-[92%] h-[92%] rounded-t-[999px] rounded-b-[2rem] border-2 border-leaf/70" aria-hidden="true"></div>
+        <div class="duo relative rounded-t-[999px] rounded-b-[2rem] overflow-hidden aspect-[4/5] max-w-[440px] ml-auto shadow-xl">
+          <img src="https://picsum.photos/seed/plh-hero-care/720/900.jpg" alt="Compassionate care at Prime Life Hospital" loading="eager" decoding="async">
+        </div>
+
+        <div class="absolute top-8 -left-1 sm:left-3 bg-white/95 backdrop-blur rounded-2xl shadow-xl border border-ink/5 p-4 w-44" aria-label="Live vitals (illustrative)">
+          <div class="flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-full bg-[#FDECEE] text-[#E14D5F] grid place-items-center flex-none"><svg class="ic w-4 h-4 beat"><use href="#i-heart-pulse"/></svg></span>
+            <div>
+              <p class="text-[10px] uppercase tracking-wider text-ink/50 font-semibold">Heart rate</p>
+              <p class="font-display text-xl leading-none font-semibold"><span id="hrVal">76</span> <span class="text-xs text-ink/50 font-normal">bpm</span></p>
+            </div>
+          </div>
+          <svg viewBox="0 0 120 30" class="w-full h-7 mt-2.5 text-leaf-600" aria-hidden="true">
+            <path d="M0 15h16l4-6 4 6h10l3 5 4-20 5 26 4-16h12l4-6 4 6h42" pathLength="100" class="ecg-run" style="--dash:34;--gap:66;--dur:2.4s" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="flex items-center justify-between mt-1 pt-2 border-t border-ink/10">
+            <p class="text-[10px] uppercase tracking-wider text-ink/50 font-semibold">SpO₂</p>
+            <p class="text-sm font-semibold"><span id="spVal">98</span>%</p>
+          </div>
+        </div>
+
+        <div class="absolute bottom-6 -left-1 sm:-left-5 bg-white rounded-full shadow-lg border border-ink/5 pl-2.5 pr-4 py-2 flex items-center gap-2.5">
+          <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-leaf opacity-70"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-leaf"></span></span>
+          <span class="text-xs font-semibold">Emergency ready · 24×7</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ECG divider -->
+    <div class="wrap pt-6" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" class="w-full h-12 text-brand block">
+        <path data-ecg="7" pathLength="1440" class="opacity-10" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <path data-ecg="7" pathLength="1440" class="ecg-run" style="--dash:150;--gap:1290;--dur:6s" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee bg-brand-800 py-3.5 overflow-hidden" aria-hidden="true">
+    <div class="marquee-track" id="marqTrack"></div>
+  </div>
+
+  <!-- STATS -->
+  <div class="bg-white border-b border-ink/8">
+    <div class="wrap grid grid-cols-2 lg:grid-cols-4 divide-x divide-ink/8">
+      <div class="py-9 px-4 text-center reveal"><p class="font-display text-4xl lg:text-5xl font-semibold text-brand"><span data-count="16" data-suffix="+">0</span></p><p class="mt-1.5 text-[11px] font-semibold uppercase tracking-[.18em] text-ink/50">Years of care</p></div>
+      <div class="py-9 px-4 text-center reveal" style="--d:80ms"><p class="font-display text-4xl lg:text-5xl font-semibold text-brand"><span data-count="25" data-suffix="+">0</span></p><p class="mt-1.5 text-[11px] font-semibold uppercase tracking-[.18em] text-ink/50">Specialist doctors</p></div>
+      <div class="py-9 px-4 text-center border-t lg:border-t-0 border-ink/8 reveal" style="--d:160ms"><p class="font-display text-4xl lg:text-5xl font-semibold text-brand"><span data-count="50000" data-suffix="+">0</span></p><p class="mt-1.5 text-[11px] font-semibold uppercase tracking-[.18em] text-ink/50">Patients every year</p></div>
+      <div class="py-9 px-4 text-center border-t lg:border-t-0 border-ink/8 reveal" style="--d:240ms"><p class="font-display text-4xl lg:text-5xl font-semibold text-brand"><span data-count="8">0</span></p><p class="mt-1.5 text-[11px] font-semibold uppercase tracking-[.18em] text-ink/50">Departments</p></div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="py-20 lg:py-28 overflow-hidden">
+    <div class="wrap grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+      <div class="relative reveal">
+        <div class="duo rounded-[2rem] overflow-hidden aspect-[4/3] max-w-lg">
+          <img src="https://picsum.photos/seed/plh-about-care/800/600.jpg" alt="Inside Prime Life Hospital" loading="lazy" decoding="async">
+        </div>
+        <div class="duo duo-plum absolute -bottom-8 -right-1 sm:right-4 w-44 sm:w-56 rounded-2xl overflow-hidden border-[6px] border-white shadow-xl aspect-[4/3]">
+          <img src="https://picsum.photos/seed/plh-about-team/480/360.jpg" alt="The Prime Life team" loading="lazy" decoding="async">
+        </div>
+        <div class="absolute -top-5 -left-1 sm:-left-5 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-leaf text-[#1F3205] grid place-items-center text-center shadow-lg -rotate-6">
+          <div><p class="font-display text-2xl sm:text-3xl font-bold leading-none">16+</p><p class="text-[10px] font-bold uppercase tracking-wider mt-1 px-2">years of care</p></div>
+        </div>
+      </div>
+
+      <div class="reveal" style="--d:120ms">
+        <p class="eyebrow">About Prime Life</p>
+        <h2 class="mt-4 font-display font-semibold tracking-tight leading-[1.15] text-[clamp(1.8rem,3.2vw,2.6rem)]">Big-city medicine,<br>neighbourly care.</h2>
+        <p class="mt-5 text-ink/65 leading-relaxed">Prime Life Super Multi Speciality Hospital Private Limited began in 2009 with a simple belief — no family in Fatehpur should have to travel to Kanpur or Lucknow for honest, advanced medical care.</p>
+        <p class="mt-4 text-ink/65 leading-relaxed">Today, our campus on GT Road brings together senior consultants across eight departments, modern operation theatres, a fully automated pathology lab, a 24×7 emergency and a well-stocked pharmacy — all built around one promise: technology in service of human care.</p>
+
+        <ul class="mt-7 grid sm:grid-cols-2 gap-x-6 gap-y-3">
+          <li class="flex items-start gap-2.5 text-sm font-medium"><svg class="ic w-5 h-5 text-leaf-600 mt-0.5 flex-none"><use href="#i-shield"/></svg> Senior consultants, 8 specialities</li>
+          <li class="flex items-start gap-2.5 text-sm font-medium"><svg class="ic w-5 h-5 text-leaf-600 mt-0.5 flex-none"><use href="#i-shield"/></svg> Transparent estimates, no surprises</li>
+          <li class="flex items-start gap-2.5 text-sm font-medium"><svg class="ic w-5 h-5 text-leaf-600 mt-0.5 flex-none"><use href="#i-shield"/></svg> In-house lab, imaging &amp; pharmacy</li>
+          <li class="flex items-start gap-2.5 text-sm font-medium"><svg class="ic w-5 h-5 text-leaf-600 mt-0.5 flex-none"><use href="#i-shield"/></svg> Cashless treatment with major TPAs</li>
+        </ul>
+
+        <div class="mt-8 flex items-center gap-5">
+          <a href="#/doctors" class="inline-flex items-center gap-2 font-semibold text-brand hover:text-brand-800 transition group">
+            Meet our doctors <svg class="ic w-4 h-4 transition-transform group-hover:translate-x-1"><use href="#i-arrow-right"/></svg>
+          </a>
+          <span class="h-4 w-px bg-ink/15" aria-hidden="true"></span>
+          <span class="text-sm text-ink/50">Serving Fatehpur since 2009</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPECIALITIES -->
+  <div class="bg-mist py-20 lg:py-28">
+    <div class="wrap">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-12 reveal">
+        <div>
+          <p class="eyebrow">Centres of excellence</p>
+          <h2 class="mt-4 font-display font-semibold tracking-tight leading-[1.15] text-[clamp(1.8rem,3.2vw,2.6rem)]">Specialities under one roof</h2>
+        </div>
+        <button data-dept-link="all" class="inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-800 transition group">
+          Browse all 8 departments <svg class="ic w-4 h-4 transition-transform group-hover:translate-x-1"><use href="#i-arrow-right"/></svg>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+        <!-- Cardiology (flagship) -->
+        <article class="md:col-span-7 bg-brand-700 text-white rounded-2xl p-7 lg:p-9 relative overflow-hidden hover:-translate-y-1 hover:shadow-xl transition duration-300 group reveal">
+          <span class="chip bg-leaf text-[#1F3205] absolute top-6 right-6">Flagship unit</span>
+          <span class="w-14 h-14 rounded-2xl bg-white/12 grid place-items-center"><svg class="ic w-7 h-7"><use href="#i-heart-pulse"/></svg></span>
+          <h3 class="mt-5 font-display text-2xl lg:text-3xl font-semibold">Cardiology</h3>
+          <p class="mt-2.5 text-white/75 leading-relaxed max-w-md">Preventive cardiology, 2D Echo, TMT and coronary care — with round-the-clock cardiac emergency support and a daily senior OPD.</p>
+          <svg viewBox="0 0 440 90" preserveAspectRatio="none" class="w-full h-10 mt-6 text-leaf" aria-hidden="true">
+            <path data-ecg="2" pathLength="1440" class="opacity-20" fill="none" stroke="currentColor" stroke-width="3"/>
+            <path data-ecg="2" pathLength="1440" class="ecg-run" style="--dash:200;--gap:1240;--dur:4s" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <div class="mt-5 flex items-center justify-between">
+            <p class="text-xs text-white/60 font-semibold uppercase tracking-wider">2 consultants · Daily OPD · Echo · TMT</p>
+            <button data-dept-link="cardiology" class="w-11 h-11 rounded-full bg-white/12 grid place-items-center hover:bg-leaf hover:text-[#1F3205] transition" aria-label="View cardiology doctors"><svg class="ic w-5 h-5 transition-transform group-hover:translate-x-0.5"><use href="#i-arrow-right"/></svg></button>
+          </div>
+        </article>
+
+        <!-- Orthopaedics -->
+        <article class="md:col-span-5 bg-white border border-ink/10 rounded-2xl p-7 hover:border-brand/50 hover:-translate-y-1 hover:shadow-lg transition duration-300 group reveal" style="--d:80ms">
+          <span class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-700 grid place-items-center"><svg class="ic w-7 h-7"><use href="#i-bone"/></svg></span>
+          <h3 class="mt-5 font-display text-2xl font-semibold">Orthopaedics</h3>
+          <p class="mt-2.5 text-ink/60 leading-relaxed">Fracture and polytrauma care, joint replacement, sports injuries and spine consultation — with physiotherapy support.</p>
+          <div class="mt-6 flex items-center justify-between">
+            <p class="text-xs text-ink/45 font-semibold uppercase tracking-wider">2 consultants · Digital X-Ray on site</p>
+            <button data-dept-link="orthopaedics" class="w-11 h-11 rounded-full border border-ink/15 grid place-items-center text-ink/60 hover:bg-brand hover:text-white hover:border-brand transition" aria-label="View orthopaedics doctors"><svg class="ic w-5 h-5"><use href="#i-arrow-right"/></svg></button>
+          </div>
+        </article>
+
+        <!-- Emergency (dark) -->
+        <article class="md:col-span-5 bg-[#04343A] text-white rounded-2xl p-7 relative overflow-hidden hover:-translate-y-1 hover:shadow-xl transition duration-300 group reveal">
+          <span class="chip bg-leaf text-[#1F3205] absolute top-6 right-6">Open 24×7</span>
+          <span class="w-14 h-14 rounded-2xl bg-white/10 grid place-items-center"><svg class="ic w-7 h-7"><use href="#i-ambulance"/></svg></span>
+          <h3 class="mt-5 font-display text-2xl font-semibold">Emergency &amp; Trauma</h3>
+          <p class="mt-2.5 text-white/70 leading-relaxed">A casualty with triage, resuscitation bays and a trauma team that never sleeps — average ambulance response under 15 minutes in city limits.</p>
+          <div class="mt-6 flex items-center justify-between">
+            <p class="text-xs text-white/50 font-semibold uppercase tracking-wider">2 consultants · ICU &amp; trauma team</p>
+            <button data-dept-link="emergency" class="w-11 h-11 rounded-full bg-white/10 grid place-items-center hover:bg-leaf hover:text-[#1F3205] transition" aria-label="View emergency doctors"><svg class="ic w-5 h-5"><use href="#i-arrow-right"/></svg></button>
+          </div>
+        </article>
+
+        <!-- Paediatrics -->
+        <article class="md:col-span-4 bg-white border border-ink/10 rounded-2xl p-7 hover:border-brand/50 hover:-translate-y-1 hover:shadow-lg transition duration-300 group reveal" style="--d:80ms">
+          <span class="w-14 h-14 rounded-2xl bg-plum-50 text-plum grid place-items-center"><svg class="ic w-7 h-7"><use href="#i-baby"/></svg></span>
+          <h3 class="mt-5 font-display text-2xl font-semibold">Paediatrics</h3>
+          <p class="mt-2.5 text-ink/60 leading-relaxed">Newborn care, growth monitoring, nutrition advice and the full immunisation schedule in a child-friendly OPD.</p>
+          <div class="mt-6 flex items-center justify-between">
+            <p class="text-xs text-ink/45 font-semibold uppercase tracking-wider">2 consultants · Vaccination</p>
+            <button data-dept-link="paediatrics" class="w-11 h-11 rounded-full border border-ink/15 grid place-items-center text-ink/60 hover:bg-plum hover:text-white hover:border-plum transition" aria-label="View paediatrics doctors"><svg class="ic w-5 h-5"><use href="#i-arrow-right"/></svg></button>
+          </div>
+        </article>
+
+        <!-- Diagnostics (narrow) -->
+        <article class="md:col-span-3 bg-white border border-ink/10 rounded-2xl p-7 hover:border-brand/50 hover:-translate-y-1 hover:shadow-lg transition duration-300 group reveal" style="--d:160ms">
+          <span class="w-14 h-14 rounded-2xl bg-leaf-50 text-leaf-600 grid place-items-center"><svg class="ic w-7 h-7"><use href="#i-microscope"/></svg></span>
+          <h3 class="mt-5 font-display text-2xl font-semibold">Diagnostics</h3>
+          <ul class="mt-3 space-y-1.5 text-sm text-ink/60">
+            <li>Digital X-Ray</li><li>Ultrasound &amp; Doppler</li><li>2D Echo · ECG · TMT</li><li>Pathology laboratory</li>
+          </ul>
+          <button data-dept-link="diagnostics" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:text-brand-800 transition">View team <svg class="ic w-4 h-4"><use href="#i-arrow-right"/></svg></button>
+        </article>
+
+        <!-- General Surgery -->
+        <article class="md:col-span-7 bg-white border border-ink/10 rounded-2xl p-7 hover:border-brand/50 hover:-translate-y-1 hover:shadow-lg transition duration-300 group reveal">
+          <span class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-700 grid place-items-center"><svg class="ic w-7 h-7"><use href="#i-scalpel"/></svg></span>
+          <h3 class="mt-5 font-display text-2xl font-semibold">General &amp; Laparoscopic Surgery</h3>
+          <p class="mt-2.5 text-ink/60 leading-relaxed max-w-xl">Advanced keyhole procedures for gallbladder, hernia, appendix and proctology — smaller incisions, less pain, faster recovery, in modern laminar-flow operation theatres.</p>
+          <div class="mt-6 flex items-center justify-between">
+            <p class="text-xs text-ink/45 font-semibold uppercase tracking-wider">1 consultant · Modular OT · Day-care surgery</p>
+            <button data-dept-link="surgery" class="w-11 h-11 rounded-full border border-ink/15 grid place-items-center text-ink/60 hover:bg-brand hover:text-white hover:border-brand transition" aria-label="View surgery doctors"><svg class="ic w-5 h-5"><use href="#i-arrow-right"/></svg></button>
+          </div>
+        </article>
+
+        <!-- Explore CTA -->
+        <button data-dept-link="all" class="md:col-span-5 bg-plum-50 border border-plum/20 rounded-2xl p-7 text-left hover:bg-plum hover:text-white hover:-translate-y-1 hover:shadow-xl transition duration-300 group reveal" style="--d:80ms">
+          <span class="w-14 h-14 rounded-2xl bg-plum/10 text-plum group-hover:bg-white/15 group-hover:text-white grid place-items-center transition"><svg class="ic w-7 h-7"><use href="#i-stethoscope"/></svg></span>
+          <h3 class="mt-5 font-display text-2xl font-semibold text-plum group-hover:text-white transition">Explore all specialities</h3>
+          <p class="mt-2.5 text-sm text-ink/55 group-hover:text-white/75 transition">8 departments · 14 consultants · including Gynaecology &amp; Obstetrics, ENT and Critical Care.</p>
+          <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-plum group-hover:text-white transition">Find a doctor <svg class="ic w-4 h-4 transition-transform group-hover:translate-x-1"><use href="#i-arrow-right"/></svg></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY CHOOSE US -->
+  <div class="bg-[#04343A] plus-grid-dark py-20 lg:py-28 relative overflow-hidden">
+    <div class="wrap grid lg:grid-cols-12 gap-12 lg:gap-16">
+      <div class="lg:col-span-5 reveal">
+        <p class="eyebrow leafy">Why Prime Life</p>
+        <h2 class="mt-4 font-display font-semibold tracking-tight leading-[1.15] text-white text-[clamp(1.8rem,3.2vw,2.6rem)]">Why families across Fatehpur choose us</h2>
+        <p class="mt-5 text-white/65 leading-relaxed">Trust in a hospital isn't built by machines alone. It's built night after night — in the emergency at 3 AM, in the honesty of a bill, in a nurse who remembers your name.</p>
+        <div class="mt-7 flex flex-wrap gap-2.5">
+          <span class="chip border border-white/20 text-white/80">OPD Mon – Sat</span>
+          <span class="chip border border-white/20 text-white/80">Emergency 24×7</span>
+          <span class="chip border border-white/20 text-white/80">Pharmacy 24×7</span>
+        </div>
+      </div>
+      <div class="lg:col-span-7 reveal" style="--d:120ms">
+        <div class="border-t border-white/10 group py-6 flex gap-6 transition hover:pl-2">
+          <span class="font-display text-3xl font-semibold text-leaf/80 group-hover:text-leaf transition flex-none w-12">01</span>
+          <div><h3 class="text-white text-lg font-semibold">Emergency in minutes, not hours</h3><p class="text-white/60 text-sm mt-1.5 leading-relaxed">24×7 casualty with rapid triage, resuscitation bays and ALS ambulances on standby, every single day of the year.</p></div>
+        </div>
+        <div class="border-t border-white/10 group py-6 flex gap-6 transition hover:pl-2">
+          <span class="font-display text-3xl font-semibold text-leaf/80 group-hover:text-leaf transition flex-none w-12">02</span>
+          <div><h3 class="text-white text-lg font-semibold">Senior consultants on every case</h3><p class="text-white/60 text-sm mt-1.5 leading-relaxed">Your treatment is planned and personally followed by a specialist — never handed down the corridor.</p></div>
+        </div>
+        <div class="border-t border-white/10 group py-6 flex gap-6 transition hover:pl-2">
+          <span class="font-display text-3xl font-semibold text-leaf/80 group-hover:text-leaf transition flex-none w-12">03</span>
+          <div><h3 class="text-white text-lg font-semibold">Everything under one roof</h3><p class="text-white/60 text-sm mt-1.5 leading-relaxed">OPD, pathology, imaging, pharmacy, surgery and ICU — without a single trip across town.</p></div>
+        </div>
+        <div class="border-t border-white/10 group py-6 flex gap-6 transition hover:pl-2">
+          <span class="font-display text-3xl font-semibold text-leaf/80 group-hover:text-leaf transition flex-none w-12">04</span>
+          <div><h3 class="text-white text-lg font-semibold">Honest, transparent billing</h3><p class="text-white/60 text-sm mt-1.5 leading-relaxed">Written estimates before every admission and procedure. No surprise bills — ever.</p></div>
+        </div>
+        <div class="border-t border-b border-white/10 group py-6 flex gap-6 transition hover:pl-2">
+          <span class="font-display text-3xl font-semibold text-leaf/80 group-hover:text-leaf transition flex-none w-12">05</span>
+          <div><h3 class="text-white text-lg font-semibold">Care that feels like family</h3><p class="text-white/60 text-sm mt-1.5 leading-relaxed">Clean wards, visiting hours that work for families, and nurses who explain things in plain Hindi and English.</p></div>
+        </div>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none" class="absolute bottom-0 left-0 w-full h-10 text-leaf opacity-60" aria-hidden="true">
+      <path data-ecg="7" pathLength="1440" class="opacity-15" fill="none" stroke="currentColor" stroke-width="2.5"/>
+      <path data-ecg="7" pathLength="1440" class="ecg-run" style="--dash:150;--gap:1290;--dur:7s" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <!-- DOCTORS PREVIEW -->
+  <div class="py-20 lg:py-28">
+    <div class="wrap">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-10 reveal">
+        <div>
+          <p class="eyebrow">Our people</p>
+          <h2 class="mt-4 font-display font-semibold tracking-tight leading-[1.15] text-[clamp(1.8rem,3.2vw,2.6rem)]">Doctors you can talk to</h2>
+        </div>
+        <div class="flex items-center gap-3">
+          <button id="docPrev" class="w-11 h-11 rounded-full border border-ink/15 grid place-items-center text-ink/60 hover:bg-brand hover:text-white hover:border-brand transition" aria-label="Scroll doctors left"><svg class="ic w-5 h-5 rotate-180"><use href="#i-arrow-right"/></svg></button>
+          <button id="docNext" class="w-11 h-11 rounded-full border border-ink/15 grid place-items-center text-ink/60 hover:bg-brand hover:text-white hover:border-brand transition" aria-label="Scroll doctors right"><svg class="ic w-5 h-5"><use href="#i-arrow-right"/></svg></button>
+        </div>
+      </div>
+      <div id="docRow" class="doc-row flex gap-5 overflow-x-auto snap-x pb-4 -mx-5 px-5 sm:mx-0 sm:px-0.5 reveal" style="--d:100ms"></div>
+      <div class="mt-8 text-center reveal">
+        <a href="#/doctors" class="inline-flex items-center gap-2 rounded-full border-2 border-brand text-brand px-7 py-3 font-semibold hover:bg-brand hover:text-white transition">
+          View all 14 consultants <svg class="ic w-4 h-4"><use href="#i-arrow-right"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PATIENT QUOTE -->
+  <div class="bg-plum-50 py-16 lg:py-20">
+    <div class="wrap max-w-3xl text-center reveal">
+      <span class="inline-grid place-items-center w-12 h-12 rounded-2xl bg-plum text-white mb-6 -rotate-3"><svg class="ic w-6 h-6"><use href="#i-quote"/></svg></span>
+      <blockquote class="font-display italic font-medium text-[clamp(1.25rem,2.4vw,1.7rem)] leading-snug text-ink">
+        “My father reached Prime Life's emergency at 2 AM with chest pain. He was on a monitor within minutes — and by morning, his treatment was done. Right here, in our own town.”
+      </blockquote>
+      <p class="mt-6 text-sm font-semibold text-plum">Ramesh Chandra</p>
+      <p class="text-xs text-ink/50 mt-0.5">Attendant · Cardiac emergency, Fatehpur</p>
+    </div>
+  </div>
+
+  <!-- CTA BAND -->
+  <div class="bg-[#04343A] py-20 lg:py-24 relative overflow-hidden">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none" class="absolute top-0 left-0 w-full h-10 text-leaf opacity-50" aria-hidden="true">
+      <path data-ecg="7" pathLength="1440" class="opacity-15" fill="none" stroke="currentColor" stroke-width="2.5"/>
+      <path data-ecg="7" pathLength="1440" class="ecg-run" style="--dash:150;--gap:1290;--dur:6s" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <div class="wrap text-center pt-8 reveal">
+      <h2 class="font-display font-semibold tracking-tight text-white text-[clamp(1.9rem,3.6vw,2.9rem)] leading-tight">Your health can't wait.<br class="sm:hidden"> Neither do we.</h2>
+      <p class="mt-4 text-white/65 max-w-xl mx-auto">Walk in any time, or book ahead. The emergency desk answers round the clock — every single day.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <!-- BOOKING: visible only while N8N_CONFIG.bookingEnabled = true -->
+        <button data-book-open class="booking-hidden inline-flex items-center gap-2.5 rounded-full bg-white text-brand-800 px-7 py-3.5 font-semibold hover:bg-leaf hover:text-[#1F3205] transition">
+          <svg class="ic w-5 h-5"><use href="#i-calendar"/></svg> Book an Appointment
+        </button>
+        <a href="tel:+919578473333" class="inline-flex items-center gap-2.5 rounded-full border border-white/30 text-white px-7 py-3.5 font-semibold hover:bg-white/10 transition">
+          <svg class="ic w-5 h-5 text-leaf"><use href="#i-phone"/></svg> +91 9578473333
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     PAGE: FIND A DOCTOR
+=================================================================== -->
+<section id="page-doctors" class="page" aria-label="Find a Doctor">
+  <div class="bg-mist plus-grid border-b border-ink/8">
+    <div class="wrap pt-12 pb-12">
+      <nav class="flex items-center gap-2 text-xs text-ink/50 font-medium" aria-label="Breadcrumb">
+        <a href="#/home" class="hover:text-brand transition">Home</a>
+        <svg class="ic w-3 h-3"><use href="#i-chevron-right"/></svg>
+        <span class="text-brand font-semibold">Find a Doctor</span>
+      </nav>
+      <h1 class="mt-4 font-display font-semibold tracking-tight text-[clamp(2.1rem,4.4vw,3.2rem)] leading-tight">Find the right doctor</h1>
+      <p class="mt-3 text-ink/60 max-w-2xl">Filter by department or search by name. Every consultant here sees patients personally — and follows their own cases till discharge.</p>
+    </div>
+  </div>
+
+  <div class="wrap py-14 lg:py-20">
+    <!-- mobile dept chips -->
+    <div id="deptChips" class="lg:hidden flex gap-2 overflow-x-auto doc-row pb-3 -mx-5 px-5 mb-6"></div>
+
+    <div class="lg:grid lg:grid-cols-[280px,1fr] lg:gap-12">
+      <!-- sidebar -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-24 bg-white border border-ink/10 rounded-2xl p-5">
+          <div class="relative">
+            <svg class="ic w-5 h-5 absolute left-3.5 top-1/2 -translate-y-1/2 text-ink/35"><use href="#i-search"/></svg>
+            <input id="docSearch" type="search" placeholder="Search doctor or speciality…" class="field pl-11" aria-label="Search doctors">
+          </div>
+          <p class="mt-6 mb-2 text-[11px] font-bold uppercase tracking-[.18em] text-ink/40">Departments</p>
+          <div id="deptList" class="space-y-1" role="tablist" aria-label="Filter by department"></div>
+        </div>
+      </aside>
+
+      <!-- results -->
+      <div>
+        <div id="deptStrip" class="hidden mb-7 rounded-2xl bg-plum-50 border border-plum/15 p-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+          <svg class="ic w-6 h-6 text-plum flex-none"><use href="#i-stethoscope"/></svg>
+          <div class="flex-1 min-w-[220px]">
+            <h2 id="deptStripName" class="font-display text-lg font-semibold text-plum-900"></h2>
+            <p id="deptStripDesc" class="text-sm text-ink/60 mt-0.5"></p>
+          </div>
+          <span id="deptStripCount" class="chip bg-white text-plum-700 border border-plum/20"></span>
+        </div>
+
+        <div class="flex items-center justify-between mb-6">
+          <p class="text-sm text-ink/55">Showing <span id="docCount" class="font-semibold text-ink">14</span> consultants</p>
+          <button data-action="reset" class="hidden text-xs font-semibold text-plum hover:text-plum-700 underline underline-offset-4" id="resetHint">Clear filters</button>
+        </div>
+
+        <div id="docGrid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-6"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     PAGE: SERVICES & FACILITIES
+=================================================================== -->
+<section id="page-services" class="page" aria-label="Services and Facilities">
+  <div class="bg-mist plus-grid border-b border-ink/8">
+    <div class="wrap pt-12 pb-12">
+      <nav class="flex items-center gap-2 text-xs text-ink/50 font-medium" aria-label="Breadcrumb">
+        <a href="#/home" class="hover:text-brand transition">Home</a>
+        <svg class="ic w-3 h-3"><use href="#i-chevron-right"/></svg>
+        <span class="text-brand font-semibold">Services &amp; Facilities</span>
+      </nav>
+      <h1 class="mt-4 font-display font-semibold tracking-tight text-[clamp(2.1rem,4.4vw,3.2rem)] leading-tight">Everything a hospital should be — and does, daily</h1>
+      <p class="mt-3 text-ink/60 max-w-2xl">Six core facilities, one campus on GT Road. Expand any service below to see exactly what's inside.</p>
+    </div>
+  </div>
+
+  <div class="wrap py-14 lg:py-20">
+    <div class="bg-white border border-ink/10 rounded-2xl overflow-hidden reveal">
+
+      <!-- 01 Emergency -->
+      <div class="acc-item acc-open border-b border-ink/10">
+        <button class="acc-head w-full flex items-center gap-5 sm:gap-8 text-left px-5 sm:px-8 py-6 hover:bg-mist/70 transition" aria-expanded="true">
+          <span class="acc-num font-display text-2xl sm:text-3xl font-semibold text-ink/25 w-10 flex-none">01</span>
+          <span class="flex-1"><span class="block font-display text-lg sm:text-xl font-semibold">24/7 Emergency &amp; Trauma</span><span class="block text-sm text-ink/55 mt-0.5">Casualty, triage and a trauma team — always awake</span></span>
+          <span class="acc-icon w-10 h-10 rounded-full border border-ink/15 grid place-items-center text-ink/60 shrink-0"><svg class="ic w-5 h-5"><use href="#i-plus"/></svg></span>
+        </button>
+        <div class="acc-panel"><div>
+          <div class="px-5 sm:px-8 pb-8 pt-1 grid md:grid-cols-[1fr,260px] gap-6">
+            <div>
+              <p class="text-ink/70 leading-relaxed text-[15px]">Emergencies don't keep office hours, so neither does our casualty. A dedicated duty doctor, nursing team and resuscitation bays operate round the clock — with an ALS ambulance and blood storage always ready.</p>
+              <ul class="mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Rapid triage within minutes of arrival</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Dedicated resuscitation bays</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Polytrauma &amp; accident care</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> In-house emergency pharmacy &amp; blood storage</li>
+              </ul>
+            </div>
+            <div class="duo rounded-xl overflow-hidden aspect-[4/3] md:aspect-auto"><img src="https://picsum.photos/seed/plh-svc-emergency/520/400.jpg" alt="Emergency department" loading="lazy"></div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 02 ICU -->
+      <div class="acc-item border-b border-ink/10">
+        <button class="acc-head w-full flex items-center gap-5 sm:gap-8 text-left px-5 sm:px-8 py-6 hover:bg-mist/70 transition" aria-expanded="false">
+          <span class="acc-num font-display text-2xl sm:text-3xl font-semibold text-ink/25 w-10 flex-none">02</span>
+          <span class="flex-1"><span class="block font-display text-lg sm:text-xl font-semibold">ICU &amp; Critical Care</span><span class="block text-sm text-ink/55 mt-0.5">Monitored beds with intensivist cover</span></span>
+          <span class="acc-icon w-10 h-10 rounded-full border border-ink/15 grid place-items-center text-ink/60 shrink-0"><svg class="ic w-5 h-5"><use href="#i-plus"/></svg></span>
+        </button>
+        <div class="acc-panel"><div>
+          <div class="px-5 sm:px-8 pb-8 pt-1 grid md:grid-cols-[1fr,260px] gap-6">
+            <div>
+              <p class="text-ink/70 leading-relaxed text-[15px]">Our ICU combines continuous multi-parameter monitoring with round-the-clock nursing and intensivist coverage — because critical care is a rhythm, not a room.</p>
+              <ul class="mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Multi-parameter bed-side monitors</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Invasive &amp; non-invasive ventilators</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Dedicated critical-care nursing</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Isolation beds for infectious cases</li>
+              </ul>
+            </div>
+            <div class="duo duo-plum rounded-xl overflow-hidden aspect-[4/3] md:aspect-auto"><img src="https://picsum.photos/seed/plh-svc-icu/520/400.jpg" alt="Intensive Care Unit" loading="lazy"></div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 03 Pharmacy -->
+      <div class="acc-item border-b border-ink/10">
+        <button class="acc-head w-full flex items-center gap-5 sm:gap-8 text-left px-5 sm:px-8 py-6 hover:bg-mist/70 transition" aria-expanded="false">
+          <span class="acc-num font-display text-2xl sm:text-3xl font-semibold text-ink/25 w-10 flex-none">03</span>
+          <span class="flex-1"><span class="block font-display text-lg sm:text-xl font-semibold">24×7 Pharmacy</span><span class="block text-sm text-ink/55 mt-0.5">Genuine medicines, any hour of the night</span></span>
+          <span class="acc-icon w-10 h-10 rounded-full border border-ink/15 grid place-items-center text-ink/60 shrink-0"><svg class="ic w-5 h-5"><use href="#i-pill"/></svg></span>
+        </button>
+        <div class="acc-panel"><div>
+          <div class="px-5 sm:px-8 pb-8 pt-1 grid md:grid-cols-[1fr,260px] gap-6">
+            <div>
+              <p class="text-ink/70 leading-relaxed text-[15px]">The counter beside the emergency never closes. Every medicine is batch-verified, stored to spec, and dispensed with a pharmacist's counselling — not just a bill.</p>
+              <ul class="mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Round-the-counter, 365 days</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Batch &amp; expiry verified stock</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Cold-chain storage for vaccines &amp; insulin</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Prescription counselling by pharmacists</li>
+              </ul>
+            </div>
+            <div class="duo rounded-xl overflow-hidden aspect-[4/3] md:aspect-auto"><img src="https://picsum.photos/seed/plh-svc-pharmacy/520/400.jpg" alt="Hospital pharmacy" loading="lazy"></div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 04 Pathology -->
+      <div class="acc-item border-b border-ink/10">
+        <button class="acc-head w-full flex items-center gap-5 sm:gap-8 text-left px-5 sm:px-8 py-6 hover:bg-mist/70 transition" aria-expanded="false">
+          <span class="acc-num font-display text-2xl sm:text-3xl font-semibold text-ink/25 w-10 flex-none">04</span>
+          <span class="flex-1"><span class="block font-display text-lg sm:text-xl font-semibold">Pathology Laboratory</span><span class="block text-sm text-ink/55 mt-0.5">Fully automated, same-day digital reports</span></span>
+          <span class="acc-icon w-10 h-10 rounded-full border border-ink/15 grid place-items-center text-ink/60 shrink-0"><svg class="ic w-5 h-5"><use href="#i-flask"/></svg></span>
+        </button>
+        <div class="acc-panel"><div>
+          <div class="px-5 sm:px-8 pb-8 pt-1 grid md:grid-cols-[1fr,260px] gap-6">
+            <div>
+              <p class="text-ink/70 leading-relaxed text-[15px]">A fully automated lab run on daily quality-control checks — so the number on your report is one your doctor can act on with confidence. Home sample collection is available across Fatehpur city.</p>
+              <ul class="mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Haematology, biochemistry &amp; microbiology</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Same-day digital reports</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Home sample collection in city limits</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Daily internal quality-control runs</li>
+              </ul>
+            </div>
+            <div class="duo duo-plum rounded-xl overflow-hidden aspect-[4/3] md:aspect-auto"><img src="https://picsum.photos/seed/plh-svc-lab/520/400.jpg" alt="Pathology laboratory" loading="lazy"></div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 05 Ambulance -->
+      <div class="acc-item border-b border-ink/10">
+        <button class="acc-head w-full flex items-center gap-5 sm:gap-8 text-left px-5 sm:px-8 py-6 hover:bg-mist/70 transition" aria-expanded="false">
+          <span class="acc-num font-display text-2xl sm:text-3xl font-semibold text-ink/25 w-10 flex-none">05</span>
+          <span class="flex-1"><span class="block font-display text-lg sm:text-xl font-semibold">Ambulance Services</span><span class="block text-sm text-ink/55 mt-0.5">ALS ambulances with trained paramedics</span></span>
+          <span class="acc-icon w-10 h-10 rounded-full border border-ink/15 grid place-items-center text-ink/60 shrink-0"><svg class="ic w-5 h-5"><use href="#i-ambulance"/></svg></span>
+        </button>
+        <div class="acc-panel"><div>
+          <div class="px-5 sm:px-8 pb-8 pt-1 grid md:grid-cols-[1fr,260px] gap-6">
+            <div>
+              <p class="text-ink/70 leading-relaxed text-[15px]">One call brings a fully equipped Advanced Life Support ambulance to your door — oxygen, defibrillator and a trained paramedic on board — with fast dispatch across Fatehpur district.</p>
+              <ul class="mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> ALS: oxygen, suction &amp; defibrillator</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Trained paramedic on every trip</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Fast dispatch across the district</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Intercity transfer (Kanpur / Lucknow) on request</li>
+              </ul>
+            </div>
+            <div class="duo rounded-xl overflow-hidden aspect-[4/3] md:aspect-auto"><img src="https://picsum.photos/seed/plh-svc-ambulance/520/400.jpg" alt="Ambulance service" loading="lazy"></div>
+          </div>
+        </div></div>
+      </div>
+
+      <!-- 06 Diagnostics -->
+      <div class="acc-item">
+        <button class="acc-head w-full flex items-center gap-5 sm:gap-8 text-left px-5 sm:px-8 py-6 hover:bg-mist/70 transition" aria-expanded="false">
+          <span class="acc-num font-display text-2xl sm:text-3xl font-semibold text-ink/25 w-10 flex-none">06</span>
+          <span class="flex-1"><span class="block font-display text-lg sm:text-xl font-semibold">Diagnostics &amp; Imaging</span><span class="block text-sm text-ink/55 mt-0.5">X-Ray, ultrasound, echo — reported in-house</span></span>
+          <span class="acc-icon w-10 h-10 rounded-full border border-ink/15 grid place-items-center text-ink/60 shrink-0"><svg class="ic w-5 h-5"><use href="#i-microscope"/></svg></span>
+        </button>
+        <div class="acc-panel"><div>
+          <div class="px-5 sm:px-8 pb-8 pt-1 grid md:grid-cols-[1fr,260px] gap-6">
+            <div>
+              <p class="text-ink/70 leading-relaxed text-[15px]">Digital X-ray, ultrasound with colour doppler, 2D echo, ECG and TMT — every study reported by our in-house radiologist and cardiologist, so results reach your consultant the same day.</p>
+              <ul class="mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Digital X-Ray</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Ultrasound &amp; Colour Doppler</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> 2D Echo · ECG · TMT</li>
+                <li class="flex gap-2 text-sm"><svg class="ic w-4 h-4 text-leaf-600 mt-0.5 flex-none"><use href="#i-check"/></svg> Reported by in-house specialists</li>
+              </ul>
+            </div>
+            <div class="duo duo-plum rounded-xl overflow-hidden aspect-[4/3] md:aspect-auto"><img src="https://picsum.photos/seed/plh-svc-imaging/520/400.jpg" alt="Imaging suite" loading="lazy"></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- Patient journey -->
+    <div class="mt-16 reveal">
+      <p class="eyebrow">What to expect</p>
+      <h2 class="mt-4 font-display font-semibold tracking-tight text-[clamp(1.6rem,3vw,2.3rem)]">Your visit, step by step</h2>
+      <ol class="mt-9 relative grid grid-cols-2 sm:grid-cols-5 gap-y-8 gap-x-4">
+        <span class="hidden sm:block absolute top-5 left-[10%] right-[10%] border-t-2 border-dashed border-brand/25" aria-hidden="true"></span>
+        <li class="relative"><span class="relative z-10 w-10 h-10 rounded-full bg-brand text-white grid place-items-center font-display font-semibold border-4 border-white shadow">1</span><h3 class="mt-3 font-semibold text-[15px]">Walk in or call</h3><p class="text-xs text-ink/55 mt-1 leading-relaxed">Emergency walks straight into triage — no queue.</p></li>
+        <li class="relative"><span class="relative z-10 w-10 h-10 rounded-full bg-brand text-white grid place-items-center font-display font-semibold border-4 border-white shadow">2</span><h3 class="mt-3 font-semibold text-[15px]">Registration &amp; triage</h3><p class="text-xs text-ink/55 mt-1 leading-relaxed">Front desk registers you in minutes, UHID for life.</p></li>
+        <li class="relative"><span class="relative z-10 w-10 h-10 rounded-full bg-brand text-white grid place-items-center font-display font-semibold border-4 border-white shadow">3</span><h3 class="mt-3 font-semibold text-[15px]">Consultation</h3><p class="text-xs text-ink/55 mt-1 leading-relaxed">A senior specialist examines and explains the plan.</p></li>
+        <li class="relative"><span class="relative z-10 w-10 h-10 rounded-full bg-brand text-white grid place-items-center font-display font-semibold border-4 border-white shadow">4</span><h3 class="mt-3 font-semibold text-[15px]">Tests &amp; pharmacy</h3><p class="text-xs text-ink/55 mt-1 leading-relaxed">Lab, imaging and medicines — same building, same day.</p></li>
+        <li class="relative"><span class="relative z-10 w-10 h-10 rounded-full bg-leaf text-[#1F3205] grid place-items-center font-display font-semibold border-4 border-white shadow">5</span><h3 class="mt-3 font-semibold text-[15px]">Follow-up</h3><p class="text-xs text-ink/55 mt-1 leading-relaxed">Review visits tracked against your UHID record.</p></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Ambulance strip -->
+  <div class="bg-plum text-white">
+    <div class="wrap py-10 flex flex-wrap items-center justify-between gap-6">
+      <div class="flex items-center gap-5">
+        <span class="w-14 h-14 rounded-2xl bg-white/15 grid place-items-center flex-none"><svg class="ic w-7 h-7"><use href="#i-ambulance"/></svg></span>
+        <div>
+          <h2 class="font-display text-xl sm:text-2xl font-semibold">Need an ambulance, right now?</h2>
+          <p class="text-white/70 text-sm mt-1">ALS ambulance with paramedic · average in-city response under 15 minutes.</p>
+        </div>
+      </div>
+      <a href="tel:+919578473333" class="inline-flex items-center gap-2.5 rounded-full bg-white text-plum-700 px-7 py-3.5 font-semibold hover:bg-leaf hover:text-[#1F3205] transition">
+        <svg class="ic w-5 h-5"><use href="#i-phone"/></svg> Call +91 9578473333
+      </a>
+    </div>
+  </div>
+
+  <!-- Help strip -->
+  <div class="wrap py-12">
+    <div class="rounded-2xl border border-ink/10 bg-mist p-6 flex flex-wrap items-center justify-between gap-4">
+      <p class="text-ink/70 text-sm flex items-center gap-3"><svg class="ic w-5 h-5 text-brand flex-none"><use href="#i-alert"/></svg> Not sure which department you need? Our front desk will guide you.</p>
+      <a href="tel:+919578473333" class="text-sm font-semibold text-brand hover:text-brand-800 underline underline-offset-4">Talk to us — +91 9578473333</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================================================================
+     PAGE: CONTACT
+=================================================================== -->
+<section id="page-contact" class="page" aria-label="Contact Us">
+  <div class="bg-mist plus-grid border-b border-ink/8">
+    <div class="wrap pt-12 pb-12">
+      <nav class="flex items-center gap-2 text-xs text-ink/50 font-medium" aria-label="Breadcrumb">
+        <a href="#/home" class="hover:text-brand transition">Home</a>
+        <svg class="ic w-3 h-3"><use href="#i-chevron-right"/></svg>
+        <span class="text-brand font-semibold">Contact Us</span>
+      </nav>
+      <h1 class="mt-4 font-display font-semibold tracking-tight text-[clamp(2.1rem,4.4vw,3.2rem)] leading-tight">We're on GT Road.<br>And on the phone, all night.</h1>
+      <p class="mt-3 text-ink/60 max-w-2xl">Call, walk in, or leave a request below — the front desk calls back within 30 minutes during working hours.</p>
+    </div>
+  </div>
+
+  <div class="wrap py-14 lg:py-20">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+      <!-- info column -->
+      <div class="space-y-9">
+        <div class="reveal">
+          <p class="text-[11px] font-bold uppercase tracking-[.2em] text-ink/40">Emergency &amp; appointments — 24×7</p>
+          <a href="tel:+919578473333" class="mt-2 inline-flex items-center gap-3 font-display font-semibold text-[clamp(1.7rem,3.4vw,2.4rem)] text-brand hover:text-brand-800 transition">
+            <svg class="ic w-7 h-7"><use href="#i-phone"/></svg> +91 9578473333
+          </a>
+        </div>
+
+        <div class="reveal" style="--d:60ms">
+          <p class="text-[11px] font-bold uppercase tracking-[.2em] text-ink/40">Address</p>
+          <address class="mt-2 not-italic flex gap-3 text-ink/75 leading-relaxed">
+            <svg class="ic w-5 h-5 text-plum mt-1 flex-none"><use href="#i-pin"/></svg>
+            <span><strong class="text-ink font-semibold">Prime Life Super Multi Speciality Hospital Private Limited</strong><br>Sultan Nagar, GT Road, Fatehpur — 212601,<br>Uttar Pradesh, India</span>
+          </address>
+          <p class="mt-3 flex items-center gap-3 text-ink/75 text-sm"><svg class="ic w-5 h-5 text-plum flex-none"><use href="#i-mail"/></svg> care@primelifehospital.in</p>
+        </div>
+
+        <div class="reveal" style="--d:120ms">
+          <p class="text-[11px] font-bold uppercase tracking-[.2em] text-ink/40 mb-3">Timings</p>
+          <ul class="divide-y divide-ink/8 border-y border-ink/8">
+            <li class="py-3 flex items-center gap-3.5 text-sm"><svg class="ic w-5 h-5 text-brand flex-none"><use href="#i-stethoscope"/></svg><span class="flex-1">OPD — Mon to Sat</span><span class="font-semibold text-ink/80 text-right">9 AM – 2 PM · 5 – 8 PM</span></li>
+            <li class="py-3 flex items-center gap-3.5 text-sm"><svg class="ic w-5 h-5 text-plum flex-none"><use href="#i-ambulance"/></svg><span class="flex-1">Emergency &amp; Trauma</span><span class="chip bg-leaf-50 text-leaf-700">24 × 7</span></li>
+            <li class="py-3 flex items-center gap-3.5 text-sm"><svg class="ic w-5 h-5 text-brand flex-none"><use href="#i-pill"/></svg><span class="flex-1">Pharmacy</span><span class="chip bg-leaf-50 text-leaf-700">24 × 7</span></li>
+            <li class="py-3 flex items-center gap-3.5 text-sm"><svg class="ic w-5 h-5 text-brand flex-none"><use href="#i-flask"/></svg><span class="flex-1">Pathology lab</span><span class="font-semibold text-ink/80 text-right">Daily, 7 AM – 7 PM</span></li>
+            <li class="py-3 flex items-center gap-3.5 text-sm"><svg class="ic w-5 h-5 text-plum flex-none"><use href="#i-clock"/></svg><span class="flex-1">Sunday OPD</span><span class="font-semibold text-ink/80 text-right">Emergency only</span></li>
+          </ul>
+        </div>
+
+        <div class="flex items-center gap-3 reveal" style="--d:180ms">
+          <button data-social="Facebook" class="w-11 h-11 rounded-full border border-ink/15 grid place-items-center text-ink/60 hover:bg-brand hover:text-white hover:border-brand transition" aria-label="Facebook"><svg class="ic w-5 h-5"><use href="#i-facebook"/></svg></button>
+          <button data-social="Instagram" class="w-11 h-11 rounded-full border border-ink/15 grid place-items-center text-ink/60 hover:bg-brand hover:text-white hover:border-brand transition" aria-label="Instagram"><svg class="ic w-5 h-5"><use href="#i-instagram"/></svg></button>
+          <button data-social="YouTube" class="w-11 h-11 rounded-full border border-ink/15 grid place-items-center text-ink/60 hover:bg-brand hover:text-white hover:border-brand transition" aria-label="YouTube"><svg class="ic w-5 h-5"><use href="#i-youtube"/></svg></button>
+          <button data-social="WhatsApp" class="w-11 h-11 rounded-full border border-ink/15 grid place-items-center text-ink/60 hover:bg-leaf-600 hover:text-white hover:border-leaf-600 transition" aria-label="WhatsApp"><svg class="ic w-5 h-5"><use href="#i-whatsapp"/></svg></button>
+        </div>
+      </div>
+
+      <!-- appointment form -->
+      <div class="reveal" style="--d:100ms">
+        <div class="bg-white border border-ink/10 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <div id="ctFormWrap">
+            <h2 class="font-display text-2xl font-semibold">Request an appointment</h2>
+            <p class="text-sm text-ink/55 mt-1.5">Fill this in and we'll call you back to confirm your slot.</p>
+            <form id="ctForm" novalidate class="mt-6 space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="ctName" class="block text-xs font-semibold text-ink/70 mb-1.5">Full name *</label>
+                  <input id="ctName" type="text" class="field" placeholder="e.g. Sunita Devi" autocomplete="name">
+                  <p class="err-msg" id="ctName-err"></p>
+                </div>
+                <div>
+                  <label for="ctPhone" class="block text-xs font-semibold text-ink/70 mb-1.5">Mobile number *</label>
+                  <input id="ctPhone" type="tel" class="field" placeholder="10-digit mobile" autocomplete="tel" inputmode="numeric">
+                  <p class="err-msg" id="ctPhone-err"></p>
+                </div>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="ctDept" class="block text-xs font-semibold text-ink/70 mb-1.5">Department *</label>
+                  <select id="ctDept" class="field"><option value="">Select a department</option></select>
+                  <p class="err-msg" id="ctDept-err"></p>
+                </div>
+                <div>
+                  <label for="ctDate" class="block text-xs font-semibold text-ink/70 mb-1.5">Preferred date</label>
+                  <input id="ctDate" type="date" class="field">
+                </div>
+              </div>
+              <div>
+                <label for="ctTime" class="block text-xs font-semibold text-ink/70 mb-1.5">Preferred time</label>
+                <select id="ctTime" class="field">
+                  <option value="any">Any available slot</option>
+                  <option value="morning">Morning (9 AM – 12 PM)</option>
+                  <option value="noon">Noon (12 PM – 3 PM)</option>
+                  <option value="evening">Evening (5 PM – 8 PM)</option>
+                </select>
+              </div>
+              <div>
+                <label for="ctMsg" class="block text-xs font-semibold text-ink/70 mb-1.5">Briefly describe your concern</label>
+                <textarea id="ctMsg" rows="3" class="field resize-none" placeholder="Symptoms, duration, previous reports…"></textarea>
+              </div>
+              <button id="ctSubmit" type="submit" class="w-full inline-flex justify-center items-center gap-2.5 rounded-full bg-brand text-white px-7 py-3.5 font-semibold hover:bg-brand-700 transition">
+                <svg class="ic w-5 h-5"><use href="#i-calendar"/></svg> Request appointment
+              </button>
+              <p class="text-xs text-ink/45 text-center">For medical emergencies, please call <a href="tel:+919578473333" class="font-semibold text-brand">+91 9578473333</a> instead of using this form.</p>
+            </form>
+          </div>
+
+          <!-- success state -->
+          <div id="ctSuccess" class="hidden text-center py-8">
+            <span class="inline-grid place-items-center w-16 h-16 rounded-full bg-leaf-50 text-leaf-600 mb-5"><svg class="ic w-8 h-8"><use href="#i-check"/></svg></span>
+            <h3 class="font-display text-2xl font-semibold">Request received</h3>
+            <p class="mt-2 text-sm text-ink/60">Reference <span id="ctRef" class="font-bold text-plum"></span> · Department: <span id="ctRefDept" class="font-semibold text-ink"></span></p>
+            <p class="mt-3 text-sm text-ink/60 max-w-sm mx-auto">Our front desk will call you within 30 minutes (9 AM – 8 PM) to confirm your slot. For emergencies, call +91 9578473333 directly.</p>
+            <button data-action="ct-again" class="mt-6 text-sm font-semibold text-brand hover:text-brand-800 underline underline-offset-4">Submit another request</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- map -->
+    <div class="mt-14 reveal">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-5">
+        <div>
+          <p class="eyebrow">Reach us</p>
+          <h2 class="mt-3 font-display font-semibold tracking-tight text-2xl">Find us on GT Road</h2>
+        </div>
+        <a href="https://www.google.com/maps?q=Sultan+Nagar,+GT+Road,+Fatehpur,+Uttar+Pradesh+212601" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border-2 border-brand text-brand px-6 py-2.5 text-sm font-semibold hover:bg-brand hover:text-white transition">
+          <svg class="ic w-4 h-4"><use href="#i-navigation"/></svg> Get directions
+        </a>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-ink/10 shadow-sm">
+        <iframe src="https://www.google.com/maps?q=Sultan+Nagar,+GT+Road,+Fatehpur,+Uttar+Pradesh+212601&output=embed" class="w-full h-[360px] border-0 block" loading="lazy" title="Map — Prime Life Hospital, Fatehpur" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-[#032A2E] text-white/70">
+  <div class="wrap py-14 lg:py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr,1fr,1fr,1.3fr]">
+    <div>
+      <a href="#/home" class="flex items-center gap-3">
+        <svg viewBox="0 0 40 40" class="w-10 h-10 flex-none" aria-hidden="true">
+          <rect x="1.5" y="1.5" width="37" height="37" rx="11" fill="#008B94"/>
+          <path d="M6 21h8l3-7 5 13 3.5-8H34" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="31.5" cy="9.5" r="4" fill="#8CC63F"/>
+        </svg>
+        <span class="leading-tight">
+          <span class="block font-display font-semibold text-lg text-white">Prime Life</span>
+          <span class="block text-[9px] font-semibold tracking-[.2em] uppercase text-leaf">Super Multi Speciality</span>
+        </span>
+      </a>
+      <p class="mt-5 text-sm leading-relaxed max-w-xs">A private multi-speciality hospital on GT Road, Fatehpur — bringing advanced, honest and affordable healthcare closer to home since 2009.</p>
+      <div class="mt-6 flex items-center gap-3">
+        <button data-social="Facebook" class="w-9 h-9 rounded-full border border-white/15 grid place-items-center hover:bg-brand hover:border-brand hover:text-white transition" aria-label="Facebook"><svg class="ic w-4 h-4"><use href="#i-facebook"/></svg></button>
+        <button data-social="Instagram" class="w-9 h-9 rounded-full border border-white/15 grid place-items-center hover:bg-brand hover:border-brand hover:text-white transition" aria-label="Instagram"><svg class="ic w-4 h-4"><use href="#i-instagram"/></svg></button>
+        <button data-social="YouTube" class="w-9 h-9 rounded-full border border-white/15 grid place-items-center hover:bg-brand hover:border-brand hover:text-white transition" aria-label="YouTube"><svg class="ic w-4 h-4"><use href="#i-youtube"/></svg></button>
+        <button data-social="WhatsApp" class="w-9 h-9 rounded-full border border-white/15 grid place-items-center hover:bg-leaf-600 hover:border-leaf-600 hover:text-white transition" aria-label="WhatsApp"><svg class="ic w-4 h-4"><use href="#i-whatsapp"/></svg></button>
+      </div>
+    </div>
+
+    <nav aria-label="Footer quick links">
+      <h3 class="text-white font-semibold text-sm uppercase tracking-[.16em]">Quick links</h3>
+      <ul class="mt-5 space-y-2.5 text-sm">
+        <li><a href="#/home" class="hover:text-leaf transition">Home</a></li>
+        <li><a href="#/doctors" class="hover:text-leaf transition">Find a Doctor</a></li>
+        <li><a href="#/services" class="hover:text-leaf transition">Services &amp; Facilities</a></li>
+        <li><a href="#/contact" class="hover:text-leaf transition">Contact Us</a></li>
+        <li class="booking-hidden"><button data-book-open class="hover:text-leaf transition">Book an Appointment</button></li>
+      </ul>
+    </nav>
+
+    <nav aria-label="Footer departments">
+      <h3 class="text-white font-semibold text-sm uppercase tracking-[.16em]">Departments</h3>
+      <ul class="mt-5 space-y-2.5 text-sm">
+        <li><button data-dept-link="cardiology" class="hover:text-leaf transition">Cardiology</button></li>
+        <li><button data-dept-link="orthopaedics" class="hover:text-leaf transition">Orthopaedics</button></li>
+        <li><button data-dept-link="paediatrics" class="hover:text-leaf transition">Paediatrics</button></li>
+        <li><button data-dept-link="gynaecology" class="hover:text-leaf transition">Gynaecology &amp; Obstetrics</button></li>
+        <li><button data-dept-link="emergency" class="hover:text-leaf transition">Emergency &amp; Critical Care</button></li>
+        <li><button data-dept-link="all" class="hover:text-leaf transition">All departments</button></li>
+      </ul>
+    </nav>
+
+    <div>
+      <h3 class="text-white font-semibold text-sm uppercase tracking-[.16em]">Reach us</h3>
+      <ul class="mt-5 space-y-4 text-sm">
+        <li class="flex gap-3"><svg class="ic w-5 h-5 text-leaf mt-0.5 flex-none"><use href="#i-pin"/></svg><span>Sultan Nagar, GT Road,<br>Fatehpur — 212601, U.P., India</span></li>
+        <li class="flex gap-3 items-center"><svg class="ic w-5 h-5 text-leaf flex-none"><use href="#i-phone"/></svg><a href="tel:+919578473333" class="hover:text-leaf transition font-semibold text-white">+91 9578473333</a></li>
+        <li class="flex gap-3 items-center"><svg class="ic w-5 h-5 text-leaf flex-none"><use href="#i-mail"/></svg><a href="mailto:care@primelifehospital.in" class="hover:text-leaf transition">care@primelifehospital.in</a></li>
+        <li class="flex gap-3 items-center"><svg class="ic w-5 h-5 text-leaf flex-none"><use href="#i-clock"/></svg><span>Emergency &amp; Pharmacy: 24 × 7</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="wrap py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/45">
+      <p>© <span id="year">2025</span> Prime Life Super Multi Speciality Hospital Private Limited. All rights reserved.</p>
+      <p>Sultan Nagar, GT Road, Fatehpur — 212601, Uttar Pradesh</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== BOOKING MODAL ==================== -->
+<div id="bookModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="bkTitle">
+  <div class="modal-back" data-close></div>
+  <div class="modal-card w-full max-w-md bg-white rounded-2xl overflow-hidden shadow-2xl">
+    <div class="bg-[#04343A] text-white px-6 py-5 flex items-start justify-between gap-4">
+      <div>
+        <p class="text-[10px] tracking-[.22em] uppercase text-leaf font-bold">Prime Life Hospital</p>
+        <h2 id="bkTitle" class="font-display text-xl font-semibold mt-1">Book an appointment</h2>
+      </div>
+      <button data-close class="w-9 h-9 grid place-items-center rounded-lg hover:bg-white/10 transition" aria-label="Close booking dialog"><svg class="ic w-5 h-5"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="p-6">
+      <div id="bkDoctor" class="hidden chip bg-plum-50 text-plum-700 border border-plum/15 mb-4">
+        <svg class="ic w-3.5 h-3.5"><use href="#i-user"/></svg><span id="bkDoctorName"></span>
+      </div>
+
+      <form id="bkForm" novalidate class="space-y-4">
+        <div>
+          <label for="bkName" class="block text-xs font-semibold text-ink/70 mb-1.5">Full name *</label>
+          <input id="bkName" type="text" class="field" placeholder="Patient's name" autocomplete="name">
+          <p class="err-msg" id="bkName-err"></p>
+        </div>
+        <div>
+          <label for="bkPhone" class="block text-xs font-semibold text-ink/70 mb-1.5">Mobile number *</label>
+          <input id="bkPhone" type="tel" class="field" placeholder="10-digit mobile" inputmode="numeric">
+          <p class="err-msg" id="bkPhone-err"></p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="bkDept" class="block text-xs font-semibold text-ink/70 mb-1.5">Department *</label>
+            <select id="bkDept" class="field"><option value="">Select</option></select>
+            <p class="err-msg" id="bkDept-err"></p>
+          </div>
+          <div>
+            <label for="bkDate" class="block text-xs font-semibold text-ink/70 mb-1.5">Preferred date</label>
+            <input id="bkDate" type="date" class="field">
+          </div>
+        </div>
+        <button id="bkSubmit" type="submit" class="w-full inline-flex justify-center items-center gap-2 rounded-full bg-brand text-white px-6 py-3 font-semibold hover:bg-brand-700 transition">
+          Request appointment
+        </button>
+      </form>
+
+      <div id="bkSuccess" class="hidden text-center py-5">
+        <span class="inline-grid place-items-center w-14 h-14 rounded-full bg-leaf-50 text-leaf-600 mb-4"><svg class="ic w-7 h-7"><use href="#i-check"/></svg></span>
+        <h3 class="font-display text-xl font-semibold">Request received</h3>
+        <p class="mt-2 text-sm text-ink/60">Reference <span id="bkRef" class="font-bold text-plum"></span> — we'll call you shortly to confirm your slot.</p>
+        <button data-close class="mt-5 text-sm font-semibold text-brand hover:text-brand-800 underline underline-offset-4">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- toasts + back to top -->
+<div id="toasts" class="fixed bottom-6 right-5 sm:right-6 z-[90] flex flex-col gap-3 items-end" aria-live="polite"></div>
+<button id="toTop" class="fixed bottom-6 right-5 sm:right-6 z-[60] w-11 h-11 rounded-full bg-brand text-white shadow-lg grid place-items-center opacity-0 pointer-events-none transition-all hover:bg-brand-700" aria-label="Back to top">
+  <svg class="ic w-5 h-5 -rotate-90"><use href="#i-arrow-right"/></svg>
+</button>
+
+<script>
+/* ============================================================
+   Prime Life Hospital — single-file app script
+   ============================================================ */
+const $  = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+
+/* ============================================================
+   n8n WEBHOOK CONFIGURATION
+   ------------------------------------------------------------
+   1) In n8n, create a workflow with a "Webhook" node:
+        - HTTP Method : POST
+        - Respond     : Immediately (or via a "Respond to Webhook" node)
+        - Options → Allowed Origins (CORS) : *      ← REQUIRED,
+          otherwise the browser blocks the request
+   2) Activate the workflow and copy the PRODUCTION URL:
+        https://<your-n8n-host>/webhook/prime-life-appointments
+   3) Paste it into `webhookUrl` below.
+   ============================================================ */
+const N8N_CONFIG = {
+  webhookUrl: 'https://YOUR-N8N-HOST/webhook/prime-life-appointments',  // ← paste your n8n Production URL here
+
+  // BOOKING ON/OFF SWITCH:
+  //   false (now) → all "Book Appointment" buttons are hidden (header, hero,
+  //                 drawer, CTA band, footer, doctor cards). The header shows
+  //                 a call button instead. The modal + webhook code stays
+  //                 fully wired and dormant.
+  //   true (later)→ flip this to true and every booking entry point comes back.
+  bookingEnabled: false
+};
+
+/* ---------------- Data ---------------- */
+const DEPTS = [
+  { id:'cardiology',  name:'Cardiology',                    blurb:"ECG, 2D Echo, TMT and complete coronary care — with daily senior OPD and round-the-clock cardiac emergency support." },
+  { id:'orthopaedics',name:'Orthopaedics',                  blurb:"Fracture and polytrauma care, joint replacement, sports injuries and spine consultation, backed by physiotherapy." },
+  { id:'paediatrics', name:'Paediatrics',                   blurb:"Newborn and child care, growth monitoring, nutrition advice and the full immunisation schedule in a child-friendly OPD." },
+  { id:'surgery',     name:'General & Laparoscopic Surgery',blurb:"Keyhole procedures for gallbladder, hernia, appendix and proctology — smaller cuts, faster recovery." },
+  { id:'emergency',   name:'Emergency & Critical Care',     blurb:"A 24×7 casualty with triage, resuscitation bays and an ICU managed by in-house intensivists." },
+  { id:'gynaecology', name:'Gynaecology & Obstetrics',      blurb:"Antenatal care, safe deliveries, family-planning counselling and complete women's health services." },
+  { id:'diagnostics', name:'Diagnostics & Imaging',         blurb:"Digital X-ray, ultrasound, colour doppler, 2D echo and a fully automated pathology laboratory." },
+  { id:'ent',         name:'ENT',                           blurb:"Ear, nose and throat care — from infections and allergies to endoscopic diagnostics and minor procedures." }
+];
+const deptName = id => (DEPTS.find(d => d.id === id) || {}).name || id;
+
+const DOCTORS = [
+  { id:1,  name:'Dr. Anil Kumar Singh',  deg:'MBBS, MD, DM (Cardiology)',        role:'Senior Interventional Cardiologist', dept:'cardiology',  exp:18, days:'Mon – Sat',   time:'10 AM – 2 PM',  seed:'plh-dr-anil' },
+  { id:2,  name:'Dr. Priyanka Singh',    deg:'MBBS, MD (General Medicine)',      role:'Consultant · Non-invasive Cardiology', dept:'cardiology', exp:9,  days:'Mon – Sat',   time:'5 PM – 8 PM',   seed:'plh-dr-priyanka' },
+  { id:3,  name:'Dr. Rajesh Verma',      deg:'MBBS, MS (Orthopaedics)',          role:'Joint Replacement & Trauma Surgeon', dept:'orthopaedics',exp:15, days:'Mon – Sat',   time:'10 AM – 1 PM',  seed:'plh-dr-rajesh' },
+  { id:4,  name:'Dr. Suresh C. Dwivedi', deg:'MBBS, DNB (Orthopaedics)',         role:'Spine & Fracture Specialist',        dept:'orthopaedics',exp:11, days:'Mon, Wed, Fri', time:'6 PM – 8 PM', seed:'plh-dr-suresh' },
+  { id:5,  name:'Dr. Meera Gupta',       deg:'MBBS, MD (Paediatrics)',           role:'Senior Consultant Paediatrician',    dept:'paediatrics', exp:12, days:'Mon – Sat',   time:'11 AM – 2 PM',  seed:'plh-dr-meera' },
+  { id:6,  name:'Dr. Kavita Rani',       deg:'MBBS, DCH',                        role:'Paediatrician & Neonatologist',      dept:'paediatrics', exp:7,  days:'Mon – Sat',   time:'5 PM – 8 PM',   seed:'plh-dr-kavita' },
+  { id:7,  name:'Dr. Vikas Singh Tomar', deg:'MBBS, MS (Gen. Surgery), FIAGES',  role:'Laparoscopic & General Surgeon',     dept:'surgery',     exp:14, days:'Mon – Sat',   time:'10 AM – 1 PM',  seed:'plh-dr-vikas' },
+  { id:8,  name:'Dr. Arun Kumar Gupta',  deg:'MBBS, MS (ENT)',                   role:'ENT & Head-Neck Surgeon',            dept:'ent',         exp:13, days:'Mon – Sat',   time:'12 PM – 3 PM',  seed:'plh-dr-arun' },
+  { id:9,  name:'Dr. Sana Fatima',       deg:'MBBS, DNB (Obst. & Gynae)',        role:'Obstetrician & Gynaecologist',       dept:'gynaecology', exp:10, days:'Mon – Sat',   time:'11 AM – 2 PM',  seed:'plh-dr-sana' },
+  { id:10, name:'Dr. Rekha Singh',       deg:"MBBS, DGO",                        role:"Consultant · Women's Health",        dept:'gynaecology', exp:16, days:'Mon, Wed, Fri', time:'5 PM – 7 PM', seed:'plh-dr-rekha' },
+  { id:11, name:'Dr. Pramod Kumar',      deg:'MBBS, MEM',                        role:'Head · Emergency Medicine',          dept:'emergency',   exp:9,  days:'Roster',      time:'24 × 7 cover',  seed:'plh-dr-pramod' },
+  { id:12, name:'Dr. Amit Patel',        deg:'MBBS, MD, IDCCM',                  role:'Intensivist · ICU & Critical Care',  dept:'emergency',   exp:8,  days:'Roster',      time:'24 × 7 cover',  seed:'plh-dr-amit' },
+  { id:13, name:'Dr. Nisha Agrawal',     deg:'MBBS, MD (Radio-diagnosis)',       role:'Consultant Radiologist',             dept:'diagnostics', exp:8,  days:'Mon – Sat',   time:'9 AM – 5 PM',   seed:'plh-dr-nisha' },
+  { id:14, name:'Dr. Mohd. Faisal',      deg:'MBBS, MD (Pathology)',             role:'Consultant Pathologist',             dept:'diagnostics', exp:11, days:'Mon – Sat',   time:'8 AM – 4 PM',   seed:'plh-dr-faisal' }
+];
+
+/* ---------------- ECG path builder ---------------- */
+const ECG_UNIT = 'h64 l8,-9 l8,9 h18 l5,8 l7,-46 l8,62 l6,-24 h16 l8,-11 l8,11 h56';
+ $$('path[data-ecg]').forEach(p => {
+  p.setAttribute('d', 'M0 45 ' + ECG_UNIT.repeat(+p.dataset.ecg || 7));
+});
+
+/* ---------------- Marquee ---------------- */
+(() => {
+  const items = ['Cardiology','Orthopaedics','Paediatrics','Laparoscopic Surgery','Emergency & Trauma','Diagnostics & Imaging','Gynaecology & Obstetrics','ENT','24×7 Pharmacy','Pathology Lab'];
+  const half = items.map(t =>
+    `<span class="flex items-center gap-6 pr-6 text-[13px] font-semibold tracking-[.18em] uppercase text-white/90 whitespace-nowrap">${t}<svg class="ic w-3.5 h-3.5 text-leaf"><use href="#i-plus"/></svg></span>`
+  ).join('');
+  $('#marqTrack').innerHTML = half + half; // duplicated for a seamless loop
+})();
+
+/* ---------------- Router ---------------- */
+const PAGES  = ['home','doctors','services','contact'];
+const TITLES = {
+  home:     'Prime Life Super Multi Speciality Hospital — Fatehpur',
+  doctors:  'Find a Doctor — Prime Life Hospital, Fatehpur',
+  services: 'Services & Facilities — Prime Life Hospital, Fatehpur',
+  contact:  'Contact Us — Prime Life Hospital, Fatehpur'
+};
+let currentRoute = 'home';
+let pendingDept  = null;
+
+function route() {
+  let h = location.hash.replace(/^#\//, '') || 'home';
+  if (!PAGES.includes(h)) h = 'home';
+  PAGES.forEach(p => $('#page-' + p).classList.toggle('active', p === h));
+  $$('.navlink').forEach(a => a.classList.toggle('active', a.dataset.route === h));
+  $$('.drawer-link').forEach(a => a.classList.toggle('text-brand', a.getAttribute('href') === '#/' + h));
+  document.title = TITLES[h];
+  currentRoute = h;
+  closeDrawer();
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  if (h === 'doctors' && pendingDept) { setDept(pendingDept); pendingDept = null; }
+}
+window.addEventListener('hashchange', route);
+
+/* ---------------- Doctor cards ---------------- */
+function docCard(d, narrow = false) {
+  /* BOOKING: the card's Book button is rendered only while booking is enabled */
+  const bookBtn = N8N_CONFIG.bookingEnabled
+    ? `<button data-book="${d.id}" class="text-sm font-semibold text-brand hover:text-brand-800 inline-flex items-center gap-1.5 transition whitespace-nowrap">Book<svg class="ic w-4 h-4"><use href="#i-arrow-right"/></svg></button>`
+    : '';
+
+  return `
+  <article class="group bg-white rounded-2xl border border-ink/10 overflow-hidden hover:shadow-xl hover:-translate-y-1 hover:border-brand/40 transition duration-300 flex flex-col ${narrow ? 'min-w-[272px] max-w-[272px] snap-start' : ''}">
+    <div class="duo aspect-[4/3.3]">
+      <img src="https://picsum.photos/seed/${d.seed}/480/400.jpg" alt="${d.name}" loading="lazy" decoding="async">
+      <span class="chip bg-plum text-white absolute top-3 left-3">${deptName(d.dept)}</span>
+      <span class="chip bg-white/95 text-ink shadow-sm absolute bottom-3 right-3">${d.exp}+ yrs exp.</span>
+    </div>
+    <div class="p-5 flex flex-col flex-1">
+      <h3 class="font-display text-lg font-semibold leading-snug">${d.name}</h3>
+      <p class="text-sm text-brand-700 font-medium mt-0.5">${d.role}</p>
+      <p class="text-xs text-ink/50 mt-1">${d.deg}</p>
+      <div class="mt-auto pt-4 border-t border-ink/8 flex items-center justify-between gap-3">
+        <span class="text-[11px] text-ink/55 leading-tight">${d.days}<br>${d.time}</span>
+        ${bookBtn}
+      </div>
+    </div>
+  </article>`;
+}
+
+ $('#docRow').innerHTML = DOCTORS.slice(0, 8).map(d => docCard(d, true)).join('');
+ $('#docPrev').addEventListener('click', () => $('#docRow').scrollBy({ left: -300, behavior: 'smooth' }));
+ $('#docNext').addEventListener('click', () => $('#docRow').scrollBy({ left:  300, behavior: 'smooth' }));
+
+/* ---------------- Doctor filtering ---------------- */
+let deptFilter = 'all', searchQ = '';
+
+function renderDeptControls() {
+  const row = (id, name) => `
+    <button data-dept="${id}" role="tab" class="dept-btn w-full flex items-center gap-2 text-left px-3.5 py-2.5 rounded-xl text-sm font-medium hover:bg-mist transition ${id === deptFilter ? 'active' : ''}">
+      ${name}<span class="count">${DOCTORS.filter(d => d.dept === id).length}</span>
+    </button>`;
+  $('#deptList').innerHTML =
+    `<button data-dept="all" role="tab" class="dept-btn w-full flex items-center gap-2 text-left px-3.5 py-2.5 rounded-xl text-sm font-medium hover:bg-mist transition ${deptFilter === 'all' ? 'active' : ''}">All departments<span class="count">${DOCTORS.length}</span></button>`
+    + DEPTS.map(d => row(d.id, d.name)).join('');
+  $('#deptChips').innerHTML =
+    `<button data-dept="all" class="dept-btn flex-none chip border border-ink/15 py-2 px-3.5 text-xs ${deptFilter === 'all' ? 'active' : ''}">All (${DOCTORS.length})</button>`
+    + DEPTS.map(d => `<button data-dept="${d.id}" class="dept-btn flex-none chip border border-ink/15 py-2 px-3.5 text-xs ${d.id === deptFilter ? 'active' : ''}">${d.name}</button>`).join('');
+}
+
+function applyFilter() {
+  const list = DOCTORS.filter(d =>
+    (deptFilter === 'all' || d.dept === deptFilter) &&
+    (d.name + ' ' + d.role + ' ' + d.deg + ' ' + deptName(d.dept)).toLowerCase().includes(searchQ)
+  );
+  $('#docGrid').innerHTML = list.length
+    ? list.map(d => docCard(d)).join('')
+    : `<div class="col-span-full text-center py-20">
+         <span class="inline-grid place-items-center w-16 h-16 rounded-full bg-mist text-ink/40 mb-4"><svg class="ic w-7 h-7"><use href="#i-search"/></svg></span>
+         <h3 class="font-display text-xl font-semibold">No doctors match your search</h3>
+         <p class="text-sm text-ink/55 mt-1.5">Try a different spelling, or clear the filters below.</p>
+         <button data-action="reset" class="mt-5 text-sm font-semibold text-brand hover:text-brand-800 underline underline-offset-4">Clear all filters</button>
+       </div>`;
+  $('#docCount').textContent = list.length;
+  const showReset = deptFilter !== 'all' || searchQ;
+  $('#resetHint').classList.toggle('hidden', !showReset);
+
+  const dv = DEPTS.find(x => x.id === deptFilter);
+  $('#deptStrip').classList.toggle('hidden', !dv);
+  if (dv) {
+    $('#deptStripName').textContent  = dv.name;
+    $('#deptStripDesc').textContent  = dv.blurb;
+    $('#deptStripCount').textContent = DOCTORS.filter(d => d.dept === dv.id).length + ' consultants';
+  }
+  renderDeptControls();
+}
+
+function setDept(id) { deptFilter = id; applyFilter(); }
+
+ $('#deptList').addEventListener('click', e => { const b = e.target.closest('[data-dept]'); if (b) setDept(b.dataset.dept); });
+ $('#deptChips').addEventListener('click', e => { const b = e.target.closest('[data-dept]'); if (b) setDept(b.dataset.dept); });
+ $('#docSearch').addEventListener('input', e => { searchQ = e.target.value.trim().toLowerCase(); applyFilter(); });
+applyFilter();
+
+/* ---------------- Accordion ---------------- */
+ $$('.acc-head').forEach(h => h.addEventListener('click', () => {
+  const item = h.parentElement;
+  const wasOpen = item.classList.contains('acc-open');
+  $$('.acc-item').forEach(i => { i.classList.remove('acc-open'); $('.acc-head', i).setAttribute('aria-expanded', 'false'); });
+  if (!wasOpen) { item.classList.add('acc-open'); h.setAttribute('aria-expanded', 'true'); }
+}));
+
+/* ---------------- Toasts (ok / warn / err) ---------------- */
+function toast(msg, type = 'ok') {
+  const t = document.createElement('div');
+  t.className = 'toast';
+  const bg   = type === 'err' ? '#E14D5F' : type === 'warn' ? '#E8A23D' : 'var(--leaf)';
+  const icon = type === 'ok' ? '#i-check' : '#i-alert';
+  t.innerHTML = `<span class="t-ic" style="background:${bg}"><svg class="ic w-3.5 h-3.5" style="stroke-width:2.4"><use href="${icon}"/></svg></span><p>${msg}</p>`;
+  $('#toasts').appendChild(t);
+  setTimeout(() => { t.classList.add('out'); setTimeout(() => t.remove(), 450); }, 5200);
+}
+
+/* ---------------- Forms: helpers ---------------- */
+const todayStr = () => new Date().toISOString().split('T')[0];
+ $('#bkDate').min = todayStr(); $('#ctDate').min = todayStr();
+
+const phoneOk = v => /^[6-9]\d{9}$/.test(v.replace(/[\s-]/g, '').replace(/^\+?91/, ''));
+function setErr(input, msg) {
+  const slot = $('#' + input.id + '-err');
+  if (msg) { input.classList.add('err'); slot.textContent = msg; slot.classList.add('show'); return false; }
+  input.classList.remove('err'); slot.classList.remove('show'); return true;
+}
+const refCode = () => 'PLH-' + Math.random().toString(36).slice(2, 7).toUpperCase();
+const prettyDate = v => v ? new Date(v + 'T00:00').toLocaleDateString('en-IN', { weekday:'short', day:'numeric', month:'short', year:'numeric' }) : null;
+
+/* ============================================================
+   n8n WEBHOOK SENDER
+   Both the booking modal and the contact form POST here.
+   Returns { ok:true } on 2xx, { skipped:true } when the URL is
+   still a placeholder, { ok:false } on network / server error.
+   ============================================================ */
+async function sendToWebhook(payload) {
+  const url = (N8N_CONFIG.webhookUrl || '').trim();
+  if (!url || url.includes('YOUR-N8N-HOST')) {
+    console.warn('[n8n] N8N_CONFIG.webhookUrl is not configured yet — form data was NOT sent to the server.');
+    return { skipped: true };
+  }
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (!res.ok) console.error('[n8n] webhook replied with HTTP ' + res.status);
+    return { ok: res.ok };
+  } catch (err) {
+    console.error('[n8n] could not reach the webhook (offline / CORS / workflow inactive):', err);
+    return { ok: false };
+  }
+}
+
+/* ---------------- Booking modal ---------------- */
+const modal = $('#bookModal');
+let bookedDoc = null;
+
+function showBkForm() {
+  $('#bkForm').classList.remove('hidden');
+  $('#bkSuccess').classList.add('hidden');
+  $('#bkDoctor').classList.toggle('hidden', !bookedDoc);
+  if (bookedDoc) {
+    $('#bkDoctorName').textContent = 'With ' + bookedDoc.name;
+    $('#bkDept').value = bookedDoc.dept;
+  }
+}
+function openBooking(doc) {
+  if (!N8N_CONFIG.bookingEnabled) return; // booking switched off — modal stays dormant
+  bookedDoc = doc || null;
+  showBkForm();
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => $('#bkName').focus(), 60);
+}
+function closeBooking() {
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+  $('#bkForm').reset(); $('#bkDept').value = '';
+  ['bkName','bkPhone','bkDept'].forEach(id => setErr($('#' + id), ''));
+  bookedDoc = null;
+}
+
+ $('#bkForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const ok =
+    setErr($('#bkName'),  $('#bkName').value.trim().length < 3 ? 'Please enter the patient\u2019s full name.' : '') &
+    setErr($('#bkPhone'), !phoneOk($('#bkPhone').value) ? 'Enter a valid 10-digit Indian mobile number.' : '') &
+    setErr($('#bkDept'),  !$('#bkDept').value ? 'Please choose a department.' : '');
+  if (!ok) return;
+
+  const btn = $('#bkSubmit'), old = btn.innerHTML;
+  btn.disabled = true; btn.textContent = 'Sending\u2026';
+
+  const ref = refCode();
+  const payload = {
+    ref,
+    source: 'booking-modal',
+    name: $('#bkName').value.trim(),
+    phone: $('#bkPhone').value.replace(/[\s-]/g, ''),
+    departmentId: $('#bkDept').value,
+    department: deptName($('#bkDept').value),
+    doctor: bookedDoc ? bookedDoc.name : null,
+    date: $('#bkDate').value || null,
+    dateLabel: $('#bkDate').value ? prettyDate($('#bkDate').value) : null,
+    time: null,
+    message: null,
+    pageUrl: location.href,
+    submittedAt: new Date().toISOString()
+  };
+  const res = await sendToWebhook(payload);
+
+  btn.disabled = false; btn.innerHTML = old;
+
+  if (res.ok || res.skipped) {
+    $('#bkRef').textContent = ref;
+    $('#bkForm').classList.add('hidden');
+    $('#bkDoctor').classList.add('hidden');
+    $('#bkSuccess').classList.remove('hidden');
+    if (res.skipped) toast('Request noted (' + ref + ') — but the n8n webhook URL is not configured yet, so nothing was sent.', 'warn');
+    else toast('Appointment request sent — reference ' + ref);
+  } else {
+    toast('Could not submit right now. Please call us directly at +91 9578473333.', 'err');
+  }
+});
+
+/* ---------------- Booking on/off switch ----------------
+   Driven by N8N_CONFIG.bookingEnabled (top of this script).
+   false → hides every "Book Appointment" button and shows the
+   header call pill instead. true → restores everything.     */
+ $$('[data-book-open]').forEach(el => el.classList.toggle('booking-hidden', !N8N_CONFIG.bookingEnabled));
+ $('#hdrBookingFallback').classList.toggle('booking-hidden', N8N_CONFIG.bookingEnabled);
+
+/* ---------------- Contact form ---------------- */
+ $('#ctForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const ok =
+    setErr($('#ctName'),  $('#ctName').value.trim().length < 3 ? 'Please enter your full name.' : '') &
+    setErr($('#ctPhone'), !phoneOk($('#ctPhone').value) ? 'Enter a valid 10-digit Indian mobile number.' : '') &
+    setErr($('#ctDept'),  !$('#ctDept').value ? 'Please choose a department.' : '');
+  if (!ok) return;
+
+  const btn = $('#ctSubmit'), old = btn.innerHTML;
+  btn.disabled = true; btn.textContent = 'Sending\u2026';
+
+  const ref = refCode();
+  const payload = {
+    ref,
+    source: 'contact-page',
+    name: $('#ctName').value.trim(),
+    phone: $('#ctPhone').value.replace(/[\s-]/g, ''),
+    departmentId: $('#ctDept').value,
+    department: deptName($('#ctDept').value),
+    doctor: null,
+    date: $('#ctDate').value || null,
+    dateLabel: $('#ctDate').value ? prettyDate($('#ctDate').value) : null,
+    time: $('#ctTime').value,
+    message: $('#ctMsg').value.trim() || null,
+    pageUrl: location.href,
+    submittedAt: new Date().toISOString()
+  };
+  const res = await sendToWebhook(payload);
+
+  btn.disabled = false; btn.innerHTML = old;
+
+  if (res.ok || res.skipped) {
+    $('#ctRef').textContent = ref;
+    $('#ctRefDept').textContent = payload.department;
+    $('#ctFormWrap').classList.add('hidden');
+    $('#ctSuccess').classList.remove('hidden');
+    if (res.skipped) toast('Request noted (' + ref + ') — but the n8n webhook URL is not configured yet, so nothing was sent.', 'warn');
+    else toast('Request received — reference ' + ref);
+  } else {
+    toast('Could not submit right now. Please call us directly at +91 9578473333.', 'err');
+  }
+});
+
+/* fill department selects */
+const deptOptions = '<option value="">Select a department</option>' + DEPTS.map(d => `<option value="${d.id}">${d.name}</option>`).join('');
+ $('#bkDept').innerHTML = deptOptions;
+ $('#ctDept').innerHTML = deptOptions;
+
+/* ---------------- Drawer ---------------- */
+function openDrawer(){ $('#drawer').classList.add('open'); $('#drawerBack').classList.remove('opacity-0','pointer-events-none'); document.body.style.overflow='hidden'; }
+function closeDrawer(){ $('#drawer').classList.remove('open'); $('#drawerBack').classList.add('opacity-0','pointer-events-none'); if(!modal.classList.contains('open')) document.body.style.overflow=''; }
+ $('#menuBtn').addEventListener('click', openDrawer);
+ $('#drawerClose').addEventListener('click', closeDrawer);
+ $('#drawerBack').addEventListener('click', closeDrawer);
+
+/* ---------------- Global delegation ---------------- */
+document.addEventListener('click', e => {
+  const bk = e.target.closest('[data-book]');
+  if (bk) { if (N8N_CONFIG.bookingEnabled) openBooking(DOCTORS.find(d => d.id == bk.dataset.book)); return; }
+
+  if (e.target.closest('[data-book-open]')) { openBooking(null); return; }
+  if (e.target.closest('[data-close]'))     { closeBooking(); return; }
+
+  const dl = e.target.closest('[data-dept-link]');
+  if (dl) {
+    pendingDept = dl.dataset.deptLink || 'all';
+    if (currentRoute === 'doctors') { setDept(pendingDept); pendingDept = null; }
+    else location.hash = '#/doctors';
+    return;
+  }
+
+  const rs = e.target.closest('[data-action="reset"]');
+  if (rs) { deptFilter = 'all'; searchQ = ''; $('#docSearch').value = ''; applyFilter(); return; }
+
+  if (e.target.closest('[data-action="ct-again"]')) {
+    $('#ctForm').reset(); setErr($('#ctName'),''); setErr($('#ctPhone'),''); setErr($('#ctDept'),'');
+    $('#ctSuccess').classList.add('hidden'); $('#ctFormWrap').classList.remove('hidden');
+    return;
+  }
+
+  const soc = e.target.closest('[data-social]');
+  if (soc) toast(soc.dataset.social + ' page coming soon — for now, reach us at +91 9578473333.');
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeBooking(); closeDrawer(); }
+});
+
+/* ---------------- Scroll: header shadow, back-to-top ---------------- */
+const toTop = $('#toTop');
+window.addEventListener('scroll', () => {
+  $('#hdr').classList.toggle('hdr-scrolled', scrollY > 8);
+  const show = scrollY > 600;
+  toTop.classList.toggle('opacity-0', !show);
+  toTop.classList.toggle('pointer-events-none', !show);
+}, { passive: true });
+toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ---------------- Reveal on scroll ---------------- */
+const revealIO = new IntersectionObserver(es => es.forEach(en => {
+  if (en.isIntersecting) { en.target.classList.add('is-in'); revealIO.unobserve(en.target); }
+}), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+ $$('.reveal').forEach(el => revealIO.observe(el));
+
+/* ---------------- Animated counters ---------------- */
+const countIO = new IntersectionObserver(es => es.forEach(en => {
+  if (!en.isIntersecting) return;
+  countIO.unobserve(en.target);
+  const el = en.target, end = +el.dataset.count, suf = el.dataset.suffix || '';
+  const t0 = performance.now(), dur = 1600;
+  (function step(t) {
+    const p = Math.min(1, (t - t0) / dur);
+    el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))).toLocaleString('en-IN') + suf;
+    if (p < 1) requestAnimationFrame(step);
+  })(t0);
+}), { threshold: .5 });
+ $$('[data-count]').forEach(el => countIO.observe(el));
+
+/* ---------------- Live vitals (hero) ---------------- */
+let hr = 76, sp = 98;
+setInterval(() => {
+  hr = Math.max(68, Math.min(88, hr + Math.round(Math.random() * 6 - 3)));
+  sp = Math.random() < .12 ? 97 : (Math.random() < .1 ? 99 : 98);
+  const el = $('#hrVal');
+  el.textContent = hr;
+  el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick');
+  $('#spVal').textContent = sp;
+}, 2600);
+
+/* ---------------- Init ---------------- */
+ $('#year').textContent = new Date().getFullYear();
+route();
+</script>
+</body>
+</html>
