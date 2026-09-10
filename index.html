@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Life Super Multi Speciality Hospital — Uttar Pradesh</title>
+<meta name="description" content="Prime Life Super Multi Speciality Hospital Pvt. Ltd., Uttar Pradesh — 24×7 emergency, cardiac sciences, mother & child, dialysis and more. Call +91 96741 01101.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340..640;1,9..144,340..640&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============ Tokens ============ */
+:root{
+  --ink:#102E2A;
+  --ink-2:#1D4A41;
+  --paper:#F6F3EB;
+  --paper-2:#EFEADC;
+  --card:#FDFCF8;
+  --green:#2E7D64;
+  --sage:#CBDACD;
+  --sand:#E7DFCB;
+  --red:#C0402F;
+  --line:rgba(16,46,42,.16);
+  --line-strong:rgba(16,46,42,.42);
+  --serif:"Fraunces", Georgia, serif;
+  --sans:"Archivo", Helvetica, sans-serif;
+  --r:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--sage);color:var(--ink)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:4px}
+.container{max-width:1220px;margin:0 auto;padding:0 28px}
+section{scroll-margin-top:96px}
+
+/* ============ Type helpers ============ */
+.h-serif{font-family:var(--serif);font-weight:480;letter-spacing:-.02em;line-height:1.06}
+.it{font-style:italic;font-weight:400;color:var(--green)}
+.eyebrow{
+  display:flex;align-items:center;gap:14px;
+  font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+  color:var(--ink-2);
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--line-strong)}
+.sec-num{
+  font-family:var(--serif);font-style:italic;color:var(--green);
+  font-size:15px;margin-right:10px;letter-spacing:0;
+}
+.sec-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:24px;
+  margin-bottom:52px;flex-wrap:wrap;
+}
+.sec-head h2{font-family:var(--serif);font-weight:480;letter-spacing:-.02em;font-size:clamp(2rem,4vw,3.1rem);line-height:1.08;margin-top:16px}
+.sec-head p.lede{max-width:420px;color:rgba(16,46,42,.72);font-size:15px}
+
+/* ============ Buttons ============ */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--ink);color:var(--paper);
+  padding:15px 26px;border-radius:999px;
+  font-size:14.5px;font-weight:600;letter-spacing:.01em;
+  transition:background .25s,transform .25s;
+}
+.btn svg{width:17px;height:17px;transition:transform .25s}
+.btn:hover{background:var(--ink-2);transform:translateY(-1px)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line-strong)}
+.btn-ghost:hover{background:rgba(16,46,42,.06)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:#a93727}
+.btn-sm{padding:11px 20px;font-size:13.5px}
+.link-arrow{
+  display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;
+  border-bottom:1px solid var(--line-strong);padding-bottom:3px;transition:border-color .2s,gap .2s;
+}
+.link-arrow svg{width:16px;height:16px}
+.link-arrow:hover{border-color:var(--ink);gap:12px}
+.icon-btn{
+  width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  box-shadow:inset 0 0 0 1px var(--line);transition:background .2s;
+}
+.icon-btn:hover{background:rgba(16,46,42,.07)}
+.icon-btn svg{width:18px;height:18px}
+
+/* ============ Topbar ============ */
+.topbar{background:var(--ink);color:var(--paper);font-size:12.5px}
+.topbar-in{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:8px 0;flex-wrap:wrap}
+.topbar a{display:inline-flex;align-items:center;gap:7px;font-weight:500}
+.topbar a:hover{opacity:.75}
+.topbar svg{width:13px;height:13px}
+.topbar-right{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.er-chip{display:inline-flex;align-items:center;gap:8px;font-weight:500}
+.dot{width:7px;height:7px;border-radius:50%;background:#7FBFA4;display:inline-block}
+.dot-red{background:#F0A499;animation:pulse 1.6s ease-in-out infinite}
+.dot-green{background:#8FD0B0;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.8)}}
+
+/* ============ Header ============ */
+.site-head{
+  position:sticky;top:0;z-index:90;
+  background:rgba(246,243,235,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s, box-shadow .3s;
+}
+.site-head.scrolled{border-bottom-color:var(--line);box-shadow:0 8px 30px rgba(16,46,42,.06)}
+.head-in{display:flex;align-items:center;justify-content:space-between;height:78px;gap:24px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:38px;height:38px;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand-name{font-family:var(--serif);font-size:21px;font-weight:520;letter-spacing:-.01em}
+.brand-name em{font-style:italic;color:var(--green);font-weight:400}
+.brand-sub{font-family:var(--sans);font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:rgba(16,46,42,.55);margin-top:3px}
+.nav{display:flex;gap:32px}
+.nav a{font-size:14.5px;font-weight:500;position:relative;padding:6px 0}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--ink);transition:width .25s}
+.nav a:hover::after{width:100%}
+.head-actions{display:flex;align-items:center;gap:18px}
+.head-phone{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px}
+.head-phone svg{width:15px;height:15px}
+.burger{display:none}
+
+/* Mobile menu */
+.mmenu{
+  position:fixed;inset:0;background:var(--ink);color:var(--paper);z-index:120;
+  display:flex;flex-direction:column;padding:28px;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.mmenu.open{opacity:1;pointer-events:auto}
+.mmenu-top{display:flex;justify-content:space-between;align-items:center}
+.mmenu nav{margin:auto 0;display:flex;flex-direction:column;gap:6px}
+.mmenu nav a{
+  font-family:var(--serif);font-size:clamp(2rem,8.5vw,3rem);font-weight:450;letter-spacing:-.02em;
+  opacity:0;transform:translateY(18px);transition:opacity .45s,transform .45s;
+}
+.mmenu.open nav a{opacity:1;transform:none}
+.mmenu nav a:nth-child(2){transition-delay:.06s}.mmenu nav a:nth-child(3){transition-delay:.12s}
+.mmenu nav a:nth-child(4){transition-delay:.18s}.mmenu nav a:nth-child(5){transition-delay:.24s}
+.mmenu-foot{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.mmenu .btn{background:var(--paper);color:var(--ink)}
+
+/* ============ Hero ============ */
+.hero{position:relative;padding:72px 0 130px}
+.hero-grid{display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:center}
+.hero h1{font-family:var(--serif);font-weight:460;letter-spacing:-.025em;font-size:clamp(2.7rem,5.6vw,4.5rem);line-height:1.04;margin:22px 0 24px}
+.hero-sub{max-width:520px;color:rgba(16,46,42,.75);font-size:17px;margin-bottom:36px}
+.hero-ctas{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.hero-trust{display:flex;gap:26px;margin-top:48px;padding-top:26px;border-top:1px solid var(--line);flex-wrap:wrap}
+.hero-trust span{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:500;color:rgba(16,46,42,.7)}
+.hero-trust svg{width:15px;height:15px;color:var(--green)}
+.hero-visual{position:relative}
+.hv-main-wrap{position:relative;overflow:hidden;border-radius:300px 300px 22px 22px}
+.hv-main{
+  width:100%;aspect-ratio:5/6;object-fit:cover;
+  filter:saturate(.72) contrast(1.03);
+}
+.hv-main-wrap::after{content:"";position:absolute;inset:0;background:rgba(46,125,100,.16);mix-blend-mode:multiply}
+.hv-small{
+  position:absolute;left:-56px;bottom:56px;width:200px;aspect-ratio:6/5;object-fit:cover;
+  border-radius:14px;border:5px solid var(--paper);
+  filter:saturate(.72);z-index:2;
+}
+.hv-chip{
+  position:absolute;z-index:3;display:inline-flex;align-items:center;gap:9px;
+  background:var(--card);border:1px solid var(--line);border-radius:999px;
+  padding:10px 17px;font-size:13px;font-weight:600;box-shadow:0 10px 26px rgba(16,46,42,.1);
+}
+.hv-chip b{font-family:var(--serif);font-style:italic;font-size:15px}
+.hv-chip-wait{top:26px;left:-34px}
+.hv-chip-open{bottom:110px;right:-20px}
+.hv-cap{position:absolute;right:6px;bottom:-30px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(16,46,42,.55)}
+.stamp{
+  position:absolute;top:-26px;right:14px;width:118px;height:118px;z-index:3;
+  display:grid;place-items:center;border-radius:50%;
+  background:var(--ink);color:var(--paper);
+  transition:transform .3s;
+}
+.stamp:hover{transform:scale(1.05) rotate(8deg)}
+.stamp svg.ring{position:absolute;inset:8px;animation:spin 16s linear infinite}
+.stamp svg.ring text{font-size:11px;letter-spacing:2.6px;fill:var(--paper);font-family:var(--sans);font-weight:600}
+.stamp .center-ic{width:20px;height:20px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ecg-wrap{position:absolute;left:0;right:0;bottom:18px;overflow:hidden;pointer-events:none}
+.ecg{display:block}
+.ecg path{animation:ecgmove 3.2s linear infinite}
+@keyframes ecgmove{to{transform:translateX(-220px)}}
+
+/* ============ Marquee ============ */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--paper-2)}
+.marquee-track{display:flex;width:max-content;animation:mq 32s linear infinite;padding:15px 0}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mq-item{display:inline-flex;align-items:center;gap:26px;padding:0 26px;font-family:var(--serif);font-size:17px;font-style:italic;white-space:nowrap;color:var(--ink-2)}
+.mq-item svg{width:15px;height:15px;color:var(--green)}
+
+/* ============ Stats ============ */
+.stats{padding:88px 0 0}
+.stats-row{display:flex}
+.stat{flex:1;padding:0 40px;position:relative}
+.stat + .stat::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:1px;background:var(--line)}
+.stat-num{font-family:var(--serif);font-weight:460;font-size:clamp(2.6rem,4.6vw,3.8rem);letter-spacing:-.03em;line-height:1;display:block}
+.stat-label{display:block;margin-top:10px;font-size:13.5px;color:rgba(16,46,42,.7)}
+
+/* ============ Departments ============ */
+.depts{padding:120px 0 40px}
+.dept-row{border-top:1px solid var(--line)}
+.dept-row:last-child{border-bottom:1px solid var(--line)}
+.dept-head{
+  width:100%;display:grid;grid-template-columns:64px 1fr 1.1fr 52px;align-items:center;gap:20px;
+  padding:28px 0;text-align:left;transition:padding .25s;
+}
+.dept-head:hover{padding-left:10px}
+.dept-num{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--green)}
+.dept-name{font-family:var(--serif);font-weight:480;font-size:clamp(1.4rem,2.6vw,2rem);letter-spacing:-.02em;transition:color .2s}
+.dept-head:hover .dept-name{color:var(--green)}
+.dept-tag{font-size:14px;color:rgba(16,46,42,.65)}
+.dept-plus{
+  width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  box-shadow:inset 0 0 0 1px var(--line);transition:transform .3s,background .3s;
+}
+.dept-plus svg{width:17px;height:17px}
+.dept-row.open .dept-plus{transform:rotate(45deg);background:var(--ink);color:var(--paper)}
+.dept-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.4,0,.2,1)}
+.dept-row.open .dept-body{grid-template-rows:1fr}
+.dept-body-in{overflow:hidden}
+.dept-body-grid{
+  display:grid;grid-template-columns:1.2fr 1fr;gap:44px;
+  padding:4px 0 36px 84px;
+}
+.dept-body-grid p{color:rgba(16,46,42,.75);font-size:15.5px;max-width:52ch}
+.dept-list{list-style:none;display:flex;flex-direction:column;gap:9px}
+.dept-list li{display:flex;gap:10px;font-size:14.5px;align-items:baseline}
+.dept-list li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--green);flex:none;transform:translateY(-2px)}
+.dept-actions{display:flex;gap:24px;align-items:center;margin-top:26px;flex-wrap:wrap}
+#deptFloat{
+  position:fixed;width:250px;aspect-ratio:4/3;object-fit:cover;border-radius:14px;
+  pointer-events:none;z-index:60;opacity:0;transform:scale(.94) rotate(-2deg);
+  transition:opacity .25s,transform .25s;filter:saturate(.7);
+  box-shadow:0 24px 50px rgba(16,46,42,.22);
+}
+#deptFloat.show{opacity:1;transform:scale(1) rotate(-2deg)}
+
+/* ============ Doctors ============ */
+.docs{padding:110px 0}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.chip{
+  padding:9px 18px;border-radius:999px;font-size:13.5px;font-weight:600;
+  box-shadow:inset 0 0 0 1px var(--line);transition:all .2s;
+}
+.chip:hover{background:rgba(16,46,42,.06)}
+.chip.active{background:var(--ink);color:var(--paper);box-shadow:none}
+.docs-meta{font-size:13px;color:rgba(16,46,42,.6);margin-bottom:30px}
+.docs-scroller{position:relative}
+.docs-track{
+  display:flex;gap:22px;overflow-x:auto;padding:20px 4px 34px;
+  scroll-snap-type:x proximity;cursor:grab;scrollbar-width:none;
+}
+.docs-track::-webkit-scrollbar{display:none}
+.docs-track.dragging{cursor:grabbing;scroll-snap-type:none}
+.doc-card{
+  flex:0 0 292px;scroll-snap-align:start;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:26px;display:flex;flex-direction:column;gap:16px;
+  transition:transform .3s,border-color .3s,box-shadow .3s;
+  animation:cardIn .45s backwards;
+}
+@keyframes cardIn{from{opacity:0;transform:translateY(14px)}}
+.doc-card:hover{transform:translateY(-5px);border-color:var(--line-strong);box-shadow:0 18px 40px rgba(16,46,42,.09)}
+@media(min-width:1025px){.doc-card:nth-child(even){margin-top:26px}}
+.doc-top{display:flex;align-items:center;gap:15px}
+.avatar{
+  width:58px;height:58px;border-radius:50%;display:grid;place-items:center;flex:none;
+  font-family:var(--serif);font-style:italic;font-size:19px;color:var(--ink);
+  box-shadow:inset 0 0 0 1px rgba(16,46,42,.12);
+}
+.doc-name{font-family:var(--serif);font-size:19px;font-weight:520;letter-spacing:-.01em;line-height:1.2}
+.doc-spec{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+.doc-title{font-size:14px;color:rgba(16,46,42,.72);min-height:44px}
+.doc-foot{
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  border-top:1px solid var(--line);padding-top:16px;margin-top:auto;
+}
+.doc-next{font-size:12.5px;color:rgba(16,46,42,.65);display:flex;align-items:center;gap:6px}
+.doc-next svg{width:13px;height:13px}
+.doc-next b{color:var(--ink)}
+.docs-nav{display:flex;gap:10px}
+
+/* ============ Stories ============ */
+.stories{background:var(--ink);color:var(--paper);padding:120px 0;position:relative;overflow:hidden}
+.stories .eyebrow{color:var(--sage)}
+.stories .eyebrow::before{background:rgba(246,243,235,.4)}
+.stories .sec-num{color:#8FD0B0}
+.quote-stage{position:relative;min-height:300px}
+.quote{position:absolute;inset:0;opacity:0;transform:translateY(16px);transition:opacity .55s,transform .55s;pointer-events:none}
+.quote.on{opacity:1;transform:none;pointer-events:auto}
+.quote blockquote{font-family:var(--serif);font-weight:420;font-size:clamp(1.5rem,3.4vw,2.5rem);letter-spacing:-.015em;line-height:1.28;max-width:20em}
+.quote .qm{color:#8FD0B0;font-style:italic}
+.quote-by{margin-top:30px;display:flex;align-items:center;gap:16px}
+.quote-by .avatar{background:rgba(246,243,235,.12);color:var(--paper);box-shadow:inset 0 0 0 1px rgba(246,243,235,.25)}
+.quote-by b{display:block;font-size:15px}
+.quote-by small{font-size:13px;color:rgba(246,243,235,.6)}
+.stories-ctrl{display:flex;align-items:center;gap:20px;margin-top:44px}
+.stories-ctrl .icon-btn{box-shadow:inset 0 0 0 1px rgba(246,243,235,.35);color:var(--paper)}
+.stories-ctrl .icon-btn:hover{background:rgba(246,243,235,.1)}
+.qdots{display:flex;gap:8px}
+.qdot{width:26px;height:3px;border-radius:2px;background:rgba(246,243,235,.25);transition:background .25s}
+.qdot.on{background:#8FD0B0}
+
+/* ============ Visit ============ */
+.visit{padding:120px 0 0}
+.visit-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:60px;align-items:start}
+.map-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);padding:22px;position:relative}
+.map-card svg{width:100%;height:auto;display:block}
+.map-hint{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(16,46,42,.55);text-align:center;margin-top:8px}
+.map-block{fill:rgba(16,46,42,.07);stroke:rgba(16,46,42,.2);stroke-width:1}
+.map-block-em{fill:rgba(192,64,47,.1);stroke:rgba(192,64,47,.35);stroke-width:1}
+.map-label{font-family:var(--sans);font-size:9.5px;letter-spacing:1.6px;fill:rgba(16,46,42,.6);font-weight:600}
+.map-label-sub{font-family:var(--sans);font-size:7.5px;letter-spacing:1.2px;fill:rgba(16,46,42,.42);font-weight:500}
+.map-pin{cursor:pointer}
+.map-pin .pin-dot{transition:transform .25s}
+.map-pin:hover .pin-dot,.map-pin.active .pin-dot{transform:scale(1.2)}
+.map-pin .pin-pulse{opacity:0}
+.map-pin.active .pin-pulse{opacity:1;animation:pinpulse 1.8s ease-out infinite;transform-origin:center;transform-box:fill-box}
+@keyframes pinpulse{from{transform:scale(.6);opacity:.7}to{transform:scale(2.1);opacity:0}}
+.spots{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.spot{
+  display:flex;gap:14px;align-items:flex-start;text-align:left;
+  border:1px solid var(--line);border-radius:14px;padding:15px 18px;background:transparent;
+  transition:background .2s,border-color .2s;
+}
+.spot:hover{background:rgba(255,255,255,.5)}
+.spot.active{background:var(--card);border-color:var(--line-strong)}
+.spot-dot{width:10px;height:10px;border-radius:50%;background:var(--c,var(--green));margin-top:6px;flex:none}
+.spot b{font-size:14.5px;display:block}
+.spot small{font-size:13px;color:rgba(16,46,42,.62);line-height:1.45;display:block;margin-top:2px}
+.visit-rows{margin-top:8px}
+.vrow{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:18px 0;border-top:1px solid var(--line);font-size:14.5px}
+.vrow:last-child{border-bottom:1px solid var(--line)}
+.vrow .vk{font-weight:600;display:flex;gap:9px;align-items:baseline}
+.vrow .vk svg{width:15px;height:15px;color:var(--green);transform:translateY(2px)}
+.vrow .vv{color:rgba(16,46,42,.75)}
+.emergency{
+  margin-top:60px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);
+  border-radius:var(--r);padding:34px 38px;
+  display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;
+}
+.emergency h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.4rem,2.4vw,1.9rem);letter-spacing:-.02em;display:flex;align-items:center;gap:14px}
+.emergency h3 svg{width:24px;height:24px;color:var(--red)}
+.emergency p{font-size:14.5px;color:rgba(16,46,42,.72);max-width:56ch;margin-top:8px}
+.emg-right{text-align:right}
+.emg-phone{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:520;letter-spacing:-.02em;color:var(--red);display:inline-flex;align-items:center;gap:12px}
+.emg-phone svg{width:22px;height:22px}
+.emg-wait{font-size:13px;color:rgba(16,46,42,.65);margin-top:6px}
+.emg-108{font-size:12.5px;color:rgba(16,46,42,.55);margin-top:4px}
+
+/* ============ FAQ ============ */
+.faq{padding:110px 0 130px}
+.faq-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:60px}
+.faq-item{border-top:1px solid var(--line)}
+.faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq-q{
+  width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;
+  padding:22px 0;text-align:left;font-family:var(--serif);font-size:19px;font-weight:500;letter-spacing:-.01em;
+}
+.faq-q .dept-plus{width:36px;height:36px;flex:none}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-a-in{overflow:hidden}
+.faq-a p{padding:0 60px 24px 0;font-size:14.5px;color:rgba(16,46,42,.75)}
+
+/* ============ Footer ============ */
+footer{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+.footer-ecg{position:absolute;top:10px;left:0;overflow:hidden;width:100%;pointer-events:none;opacity:.35}
+.foot-main{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:48px;padding:90px 0 60px;position:relative}
+.foot-word{font-family:var(--serif);font-size:clamp(2.4rem,4vw,3.4rem);font-weight:460;letter-spacing:-.02em;line-height:1.05}
+.foot-word em{color:#8FD0B0;font-style:italic;font-weight:400}
+.foot-legal{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:rgba(246,243,235,.5);margin-top:12px}
+.foot-tag{margin-top:18px;font-size:14px;color:rgba(246,243,235,.6);max-width:32ch}
+.foot-col h4{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,243,235,.55);margin-bottom:20px;font-weight:600}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.foot-col a{font-size:14.5px;color:rgba(246,243,235,.85);transition:color .2s}
+.foot-col a:hover{color:#8FD0B0}
+.news-form{display:flex;margin-top:16px;border:1px solid rgba(246,243,235,.3);border-radius:999px;overflow:hidden;padding:4px}
+.news-form input{
+  flex:1;background:transparent;border:none;color:var(--paper);padding:10px 16px;font-family:var(--sans);font-size:14px;min-width:0;
+}
+.news-form input::placeholder{color:rgba(246,243,235,.45)}
+.news-form input:focus{outline:none}
+.news-form button{
+  background:var(--paper);color:var(--ink);border-radius:999px;padding:10px 18px;
+  font-weight:600;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;transition:background .2s;
+}
+.news-form button:hover{background:#8FD0B0}
+.foot-bottom{
+  border-top:1px solid rgba(246,243,235,.14);padding:24px 0;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:12.5px;color:rgba(246,243,235,.5);position:relative;
+}
+.foot-bottom nav{display:flex;gap:22px}
+.foot-bottom a:hover{color:var(--paper)}
+
+/* ============ Modal ============ */
+.modal{position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:20px;visibility:hidden}
+.modal.open{visibility:visible}
+.modal-backdrop{position:absolute;inset:0;background:rgba(16,46,42,.5);backdrop-filter:blur(4px);opacity:0;transition:opacity .3s}
+.modal.open .modal-backdrop{opacity:1}
+.modal-panel{
+  position:relative;background:var(--paper);border-radius:22px;width:min(700px,100%);
+  max-height:92vh;display:flex;flex-direction:column;
+  transform:translateY(24px) scale(.98);opacity:0;transition:transform .35s cubic-bezier(.3,1.2,.4,1),opacity .3s;
+  box-shadow:0 40px 90px rgba(16,46,42,.35);
+}
+.modal.open .modal-panel{transform:none;opacity:1}
+.modal-head{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 32px 0}
+.modal-kicker{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);font-weight:600}
+.modal-title{font-family:var(--serif);font-size:26px;font-weight:500;letter-spacing:-.02em;margin-top:4px}
+.steps{display:flex;gap:0;padding:22px 32px 0;list-style:none}
+.step{flex:1;display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:600;color:rgba(16,46,42,.4)}
+.step .n{
+  width:24px;height:24px;border-radius:50%;display:grid;place-items:center;flex:none;
+  box-shadow:inset 0 0 0 1px var(--line);font-size:11.5px;transition:all .25s;
+}
+.step:not(:last-child)::after{content:"";flex:1;height:1px;background:var(--line);margin:0 12px}
+.step.on{color:var(--ink)}
+.step.on .n{background:var(--ink);color:var(--paper);box-shadow:none}
+.step.done{color:var(--ink-2)}
+.step.done .n{background:var(--sage);box-shadow:none}
+.modal-body{padding:26px 32px;overflow-y:auto;min-height:340px}
+.modal-foot{display:flex;justify-content:space-between;gap:14px;padding:20px 32px 26px;border-top:1px solid var(--line)}
+.blabel{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:rgba(16,46,42,.55);margin:22px 0 12px}
+.blabel:first-child{margin-top:0}
+.pillgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pill{
+  display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;
+  border:1px solid var(--line);border-radius:14px;padding:16px 8px;font-size:12.5px;font-weight:600;
+  transition:all .2s;background:var(--card);
+}
+.pill svg{width:20px;height:20px;color:var(--ink-2)}
+.pill:hover{border-color:var(--line-strong)}
+.pill.sel{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.pill.sel svg{color:#8FD0B0}
+.doclist{display:flex;flex-direction:column;gap:10px}
+.docrow{
+  display:flex;align-items:center;gap:14px;text-align:left;
+  border:1px solid var(--line);border-radius:14px;padding:13px 16px;background:var(--card);transition:all .2s;
+}
+.docrow:hover{border-color:var(--line-strong)}
+.docrow.sel{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+.docrow .avatar{width:44px;height:44px;font-size:15px}
+.docrow b{font-family:var(--serif);font-size:16px;font-weight:520;display:block}
+.docrow small{font-size:12.5px;color:rgba(16,46,42,.6)}
+.docrow .dr-next{margin-left:auto;font-size:12px;color:var(--green);font-weight:600;white-space:nowrap}
+.daystrip{display:flex;gap:9px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.daystrip::-webkit-scrollbar{display:none}
+.day{
+  flex:0 0 76px;border:1px solid var(--line);border-radius:13px;padding:11px 6px;text-align:center;background:var(--card);transition:all .2s;
+}
+.day small{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(16,46,42,.55);font-weight:600}
+.day b{font-family:var(--serif);font-size:19px;font-weight:520;display:block;margin-top:3px}
+.day:hover{border-color:var(--line-strong)}
+.day.sel{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.day.sel small{color:#8FD0B0}
+.slotgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.slot{
+  border:1px solid var(--line);border-radius:11px;padding:10px 4px;font-size:13.5px;font-weight:500;background:var(--card);transition:all .15s;
+}
+.slot:hover:not(:disabled){border-color:var(--line-strong)}
+.slot.sel{background:var(--green);border-color:var(--green);color:#fff}
+.slot:disabled{opacity:.32;cursor:not-allowed;text-decoration:line-through}
+.slot-empty{font-size:14px;color:rgba(16,46,42,.55);padding:14px 0;grid-column:1/-1}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13px;font-weight:600;margin-bottom:7px}
+.field input,.field textarea{
+  width:100%;border:1px solid var(--line);border-radius:12px;background:var(--card);
+  padding:13px 16px;font-family:var(--sans);font-size:14.5px;color:var(--ink);transition:border-color .2s;
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--ink-2)}
+.field textarea{resize:vertical;min-height:80px}
+.field .err{display:none;color:var(--red);font-size:12.5px;margin-top:5px}
+.field.bad input{border-color:var(--red)}
+.field.bad .err{display:block}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.review{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card)}
+.rev-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:15px 20px;border-top:1px solid var(--line);font-size:14.5px}
+.rev-row:first-child{border-top:none}
+.rev-row .rk{color:rgba(16,46,42,.55);font-size:13px}
+.rev-row b{font-family:var(--serif);font-size:16px;font-weight:520}
+.rev-edit{font-size:12.5px;font-weight:600;color:var(--green);border-bottom:1px solid transparent}
+.rev-edit:hover{border-bottom-color:var(--green)}
+.bnote{font-size:13px;color:rgba(16,46,42,.6);margin-top:16px;display:flex;gap:9px}
+.bnote svg{width:15px;height:15px;flex:none;color:var(--green);margin-top:2px}
+.success{text-align:center;padding:22px 0 10px}
+.success .big-check{
+  width:76px;height:76px;border-radius:50%;background:var(--sage);color:var(--ink);
+  display:grid;place-items:center;margin:0 auto 22px;animation:pop .5s cubic-bezier(.3,1.6,.5,1);
+}
+.success .big-check svg{width:34px;height:34px}
+@keyframes pop{from{transform:scale(.4);opacity:0}}
+.refcode{font-family:var(--serif);font-size:34px;font-weight:520;letter-spacing:.04em;margin:10px 0 4px}
+.success p{font-size:14.5px;color:rgba(16,46,42,.7);max-width:44ch;margin:0 auto}
+
+/* ============ Toasts ============ */
+.toasts{position:fixed;right:22px;bottom:22px;z-index:200;display:flex;flex-direction:column;gap:10px}
+.toast{
+  display:flex;align-items:center;gap:12px;background:var(--ink);color:var(--paper);
+  padding:14px 20px;border-radius:14px;font-size:14px;font-weight:500;
+  box-shadow:0 18px 40px rgba(16,46,42,.3);animation:toastIn .4s cubic-bezier(.3,1.3,.4,1);max-width:340px;
+}
+.toast.out{animation:toastOut .3s forwards}
+.toast svg{width:17px;height:17px;color:#8FD0B0;flex:none}
+@keyframes toastIn{from{opacity:0;transform:translateY(14px)}}
+@keyframes toastOut{to{opacity:0;transform:translateY(10px)}}
+
+/* ============ Reveal ============ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1);transition-delay:var(--d,0s)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ Responsive ============ */
+@media(max-width:1080px){
+  .hero-grid{grid-template-columns:1fr;gap:70px}
+  .hero-visual{max-width:480px}
+  .hv-small{left:-16px}
+  .hv-chip-wait{left:-8px}
+  .dept-body-grid{grid-template-columns:1fr;gap:26px;padding-left:0}
+  .visit-grid{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr;gap:34px}
+  .foot-main{grid-template-columns:1fr 1fr}
+  #deptFloat{display:none}
+}
+@media(max-width:960px){
+  .nav,.head-phone{display:none}
+  .burger{display:grid}
+  .dept-head{grid-template-columns:44px 1fr 48px}
+  .dept-tag{display:none}
+  .brand-sub{display:none}
+}
+@media(max-width:760px){
+  .stats-row{flex-wrap:wrap}
+  .stat{flex:1 1 40%;padding:22px 26px}
+  .stat + .stat::before{display:none}
+  .stat:nth-child(even){border-left:1px solid var(--line)}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .pillgrid{grid-template-columns:repeat(2,1fr)}
+  .slotgrid{grid-template-columns:repeat(3,1fr)}
+  .emergency{padding:28px 24px}
+  .emg-right{text-align:left}
+  .hv-chip-open{right:0;bottom:70px}
+  .stamp{width:100px;height:100px;top:-18px;right:0}
+}
+@media(max-width:560px){
+  .container{padding:0 20px}
+  .hero{padding-top:48px}
+  .frow{grid-template-columns:1fr}
+  .foot-main{grid-template-columns:1fr;gap:38px}
+  .head-actions .btn{display:none}
+  .modal-body{padding:22px 20px}
+  .modal-head,.modal-foot{padding-left:20px;padding-right:20px}
+  .steps{padding-left:20px;padding-right:20px}
+  .step span.sl{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- Top utility bar -->
+<div class="topbar">
+  <div class="container topbar-in">
+    <a href="tel:+919674101101"><svg data-lucide="siren"></svg> Emergency 24×7 — +91 96741 01101</a>
+    <div class="topbar-right">
+      <span class="er-chip"><span class="dot dot-red"></span> ER wait: ~<span data-er-wait>12</span> min</span>
+      <span style="opacity:.55">Uttar Pradesh, India · Open 24×7</span>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-head" id="siteHead">
+  <div class="container head-in">
+    <a class="brand" href="#top" aria-label="Prime Life Hospital home">
+      <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+        <rect width="36" height="36" rx="10" fill="var(--ink)"/>
+        <polyline points="5,18 11,18 14,11 18,25 21,13 23,18 31,18" fill="none" stroke="#F6F3EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">Prime&nbsp;<em>Life</em></span>
+        <span class="brand-sub">Super Multi Speciality Hospital</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#departments">Departments</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#stories">Stories</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="head-actions">
+      <a class="head-phone" href="tel:+919674101101"><svg data-lucide="phone"></svg>+91 96741 01101</a>
+      <button class="btn btn-sm" data-book>Book appointment</button>
+      <button class="icon-btn burger" id="burger" aria-label="Open menu"><svg data-lucide="menu"></svg></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <div class="mmenu-top">
+    <span style="font-family:var(--serif);font-size:20px">Prime <em style="color:#8FD0B0">Life</em></span>
+    <button class="icon-btn" id="mmenuClose" style="box-shadow:inset 0 0 0 1px rgba(246,243,235,.35);color:var(--paper)" aria-label="Close menu"><svg data-lucide="x"></svg></button>
+  </div>
+  <nav>
+    <a href="#departments">Departments</a>
+    <a href="#doctors">Doctors</a>
+    <a href="#stories">Stories</a>
+    <a href="#visit">Visit</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="mmenu-foot">
+    <button class="btn" data-book>Book appointment <svg data-lucide="arrow-right"></svg></button>
+    <a href="tel:+919674101101" style="font-weight:600;display:inline-flex;gap:9px;align-items:center"><svg data-lucide="siren" style="width:15px;height:15px;color:#F0A499"></svg>Emergency: +91 96741 01101</a>
+  </div>
+</div>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow reveal">Prime Life Super Multi Speciality Hospital · Uttar Pradesh</p>
+      <h1 class="reveal" style="--d:.08s">Serious medicine.<br>Human touch.<br><span class="it">Close to home.</span></h1>
+      <p class="hero-sub reveal" style="--d:.16s">From 24×7 emergency and trauma to cardiac sciences, mother &amp; child and dialysis — advanced super-speciality care for the people of Uttar Pradesh, with the warmth your family deserves.</p>
+      <div class="hero-ctas reveal" style="--d:.24s">
+        <button class="btn" data-book>Book an appointment <svg data-lucide="arrow-right"></svg></button>
+        <a class="link-arrow" href="#doctors">Find a doctor <svg data-lucide="arrow-up-right"></svg></a>
+      </div>
+      <div class="hero-trust reveal" style="--d:.32s">
+        <span><svg data-lucide="siren"></svg> 24×7 Emergency, Pharmacy &amp; Lab</span>
+        <span><svg data-lucide="indian-rupee"></svg> Cashless insurance &amp; Ayushman desk</span>
+        <span><svg data-lucide="activity"></svg> ICU · NICU · Dialysis in-house</span>
+      </div>
+    </div>
+    <div class="hero-visual reveal" style="--d:.2s">
+      <div class="hv-main-wrap">
+        <img class="hv-main" src="https://picsum.photos/seed/platrium/700/860.jpg" alt="The atrium of Prime Life Hospital">
+      </div>
+      <img class="hv-small" src="https://picsum.photos/seed/plwing/400/340.jpg" alt="The OPD wing of the campus" loading="lazy">
+      <div class="hv-chip hv-chip-wait"><span class="dot dot-red"></span> ER wait&nbsp;<b>~<span data-er-wait>12</span> min</b></div>
+      <div class="hv-chip hv-chip-open"><span class="dot dot-green"></span> Accepting new patients</div>
+      <a class="stamp" href="#" id="stamp" aria-label="Book an appointment">
+        <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
+          <defs><path id="cirpath" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+          <text><textPath href="#cirpath">PRIME LIFE · 24X7 CARE · BOOK TODAY ·&#160;</textPath></text>
+        </svg>
+        <svg class="center-ic" data-lucide="calendar"></svg>
+      </a>
+      <span class="hv-cap">Main atrium · Prime Life campus</span>
+    </div>
+  </div>
+  <div class="ecg-wrap" aria-hidden="true">
+    <svg class="ecg" id="ecgHero" width="1760" height="80" viewBox="0 0 1760 80"></svg>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="mqTrack"></div>
+</div>
+
+<!-- Stats -->
+<section class="stats">
+  <div class="container stats-row">
+    <div class="stat reveal"><span class="stat-num"><span data-count="9">0</span></span><span class="stat-label">Super-specialities under one roof</span></div>
+    <div class="stat reveal" style="--d:.08s"><span class="stat-num"><span data-count="40">0</span>+</span><span class="stat-label">Consultants &amp; surgeons</span></div>
+    <div class="stat reveal" style="--d:.16s"><span class="stat-num"><span data-count="150">0</span>+</span><span class="stat-label">Inpatient beds with ICU &amp; NICU</span></div>
+    <div class="stat reveal" style="--d:.24s"><span class="stat-num"><span data-count="24">0</span>/7</span><span class="stat-label">Emergency, pharmacy &amp; critical care</span></div>
+  </div>
+</section>
+
+<!-- ============ Departments ============ -->
+<section class="depts" id="departments">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow"><span class="sec-num">01</span> Centres of care</p>
+        <h2>Every speciality,<br>under one <span class="it">roof.</span></h2>
+      </div>
+      <p class="lede">Nine super-specialities, one medical record, zero runaround. Open a centre to see what we treat — or book straight into it.</p>
+    </div>
+    <div id="deptList" class="reveal"></div>
+  </div>
+</section>
+<img id="deptFloat" src="" alt="" aria-hidden="true">
+
+<!-- ============ Doctors ============ -->
+<section class="docs" id="doctors">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow"><span class="sec-num">02</span> Our doctors</p>
+        <h2>People you'll be <span class="it">glad</span><br>to be looked after by.</h2>
+      </div>
+      <div class="docs-nav">
+        <button class="icon-btn" id="docsPrev" aria-label="Scroll left"><svg data-lucide="chevron-left"></svg></button>
+        <button class="icon-btn" id="docsNext" aria-label="Scroll right"><svg data-lucide="chevron-right"></svg></button>
+      </div>
+    </div>
+    <div class="chips reveal" id="docChips"></div>
+    <p class="docs-meta reveal" id="docsMeta"></p>
+    <div class="docs-scroller reveal">
+      <div class="docs-track" id="docsTrack"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Stories ============ -->
+<section class="stories" id="stories">
+  <div class="container">
+    <p class="eyebrow reveal"><span class="sec-num">03</span> Patient stories</p>
+    <div class="quote-stage reveal" id="quoteStage" style="margin-top:34px"></div>
+    <div class="stories-ctrl reveal">
+      <button class="icon-btn" id="qPrev" aria-label="Previous story"><svg data-lucide="chevron-left"></svg></button>
+      <button class="icon-btn" id="qNext" aria-label="Next story"><svg data-lucide="chevron-right"></svg></button>
+      <div class="qdots" id="qDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Visit ============ -->
+<section class="visit" id="visit">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow"><span class="sec-num">04</span> Plan your visit</p>
+        <h2>Easy to find.<br>Easier to feel <span class="it">welcome.</span></h2>
+      </div>
+      <!-- TODO: Replace with full campus address once shared -->
+      <p class="lede">Campus in Uttar Pradesh, India · Full address being updated — call +91 96741 01101 for directions.</p>
+    </div>
+    <div class="visit-grid">
+      <div class="map-card reveal">
+        <svg viewBox="0 0 560 430" role="img" aria-label="Stylised campus map of Prime Life Hospital">
+          <!-- campus lawn & boundary -->
+          <rect x="20" y="20" width="520" height="390" rx="26" fill="rgba(46,125,100,.05)" stroke="rgba(16,46,42,.3)" stroke-width="1.2"/>
+          <ellipse cx="140" cy="66" rx="62" ry="26" fill="#CBDACD"/>
+          <text x="140" y="70" text-anchor="middle" class="map-label-sub">GARDEN</text>
+          <ellipse cx="470" cy="70" rx="46" ry="22" fill="#CBDACD"/>
+          <text x="470" y="74" text-anchor="middle" class="map-label-sub">LAWN</text>
+          <!-- buildings -->
+          <rect class="map-block" x="60" y="110" width="150" height="95" rx="9"/>
+          <text x="135" y="188" text-anchor="middle" class="map-label">OPD BLOCK</text>
+          <rect class="map-block" x="250" y="80" width="140" height="140" rx="9"/>
+          <text x="320" y="145" text-anchor="middle" class="map-label">IPD TOWER</text>
+          <text x="320" y="162" text-anchor="middle" class="map-label-sub">WARDS · ICU · OT</text>
+          <rect class="map-block-em" x="420" y="130" width="90" height="100" rx="9"/>
+          <text x="465" y="222" text-anchor="middle" class="map-label" style="fill:rgba(192,64,47,.7)">EMERGENCY</text>
+          <rect class="map-block" x="70" y="250" width="130" height="80" rx="9"/>
+          <text x="135" y="322" text-anchor="middle" class="map-label">DIAGNOSTICS</text>
+          <rect class="map-block" x="250" y="290" width="90" height="55" rx="9"/>
+          <text x="295" y="360" text-anchor="middle" class="map-label">PHARMACY</text>
+          <rect x="430" y="290" width="80" height="50" rx="9" fill="rgba(16,46,42,.045)"/>
+          <text x="470" y="320" text-anchor="middle" class="map-label-sub">CANTEEN</text>
+          <!-- parking -->
+          <rect x="60" y="360" width="90" height="36" rx="7" fill="rgba(138,109,59,.16)"/>
+          <text x="105" y="382" text-anchor="middle" class="map-label-sub" style="fill:rgba(138,109,59,.85)">PARKING</text>
+          <!-- main gate road -->
+          <line x1="300" y1="430" x2="300" y2="396" stroke="#E2DBC8" stroke-width="14" stroke-linecap="round"/>
+          <line x1="300" y1="430" x2="300" y2="396" stroke="rgba(16,46,42,.28)" stroke-width="1.4" stroke-dasharray="1 9" stroke-linecap="round"/>
+          <text x="300" y="412" text-anchor="middle" class="map-label-sub" style="fill:rgba(16,46,42,.55)">MAIN GATE</text>
+          <!-- footpath from gate to OPD -->
+          <path d="M300 396 Q300 260 210 158" fill="none" stroke="rgba(16,46,42,.18)" stroke-width="1.4" stroke-dasharray="1 7" stroke-linecap="round"/>
+          <!-- pins -->
+          <g class="map-pin" data-spot="emergency" transform="translate(465,180)">
+            <circle r="18" fill="transparent"/>
+            <circle class="pin-pulse" r="10" fill="none" stroke="#C0402F" stroke-width="2"/>
+            <circle class="pin-dot" r="10" fill="#C0402F" stroke="#F6F3EB" stroke-width="2.5"/>
+            <path d="M-3.4 0 h6.8 M0 -3.4 v6.8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          </g>
+          <g class="map-pin" data-spot="reception" transform="translate(135,135)">
+            <circle r="18" fill="transparent"/>
+            <circle class="pin-pulse" r="10" fill="none" stroke="#2E7D64" stroke-width="2"/>
+            <circle class="pin-dot" r="10" fill="#2E7D64" stroke="#F6F3EB" stroke-width="2.5"/>
+            <path d="M0 -4 v7 M-3.6 -0.5 L0 3 L3.6 -0.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </g>
+          <g class="map-pin" data-spot="pharmacy" transform="translate(295,317)">
+            <circle r="18" fill="transparent"/>
+            <circle class="pin-pulse" r="10" fill="none" stroke="#102E2A" stroke-width="2"/>
+            <circle class="pin-dot" r="10" fill="#102E2A" stroke="#F6F3EB" stroke-width="2.5"/>
+            <path d="M-3 -3.6 h6 M-2.4 -3.6 l1 7.2 a2 2 0 0 0 4 0 l1 -7.2" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          </g>
+          <g class="map-pin" data-spot="diagnostics" transform="translate(135,272)">
+            <circle r="18" fill="transparent"/>
+            <circle class="pin-pulse" r="10" fill="none" stroke="#8a6d3b" stroke-width="2"/>
+            <circle class="pin-dot" r="10" fill="#8a6d3b" stroke="#F6F3EB" stroke-width="2.5"/>
+            <path d="M-1.5 -4 h3 M-0.7 -4 v3.4 l2.6 4 a1 1 0 0 1 -.9 1.6 h-4 a1 1 0 0 1 -.9 -1.6 l2.6 -4 v-3.4" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <g class="map-pin" data-spot="parking" transform="translate(105,378)">
+            <circle r="18" fill="transparent"/>
+            <circle class="pin-pulse" r="10" fill="none" stroke="#6b7f8c" stroke-width="2"/>
+            <circle class="pin-dot" r="10" fill="#6b7f8c" stroke="#F6F3EB" stroke-width="2.5"/>
+            <text y="3.8" text-anchor="middle" style="font-size:10px;font-weight:700;fill:#fff;font-family:var(--sans)">P</text>
+          </g>
+        </svg>
+        <p class="map-hint">Tap a marker to explore the campus</p>
+        <div class="spots" id="spotList"></div>
+      </div>
+      <div class="reveal" style="--d:.12s">
+        <div class="visit-rows">
+          <div class="vrow">
+            <span class="vk"><svg data-lucide="map-pin"></svg>Address</span>
+            <span class="vv">Prime Life campus — full address updating soon<br>Uttar Pradesh, India</span>
+          </div>
+          <div class="vrow">
+            <span class="vk"><svg data-lucide="clock"></svg>Timings</span>
+            <span class="vv">OPD · Mon–Sat, 9:00 AM – 5:00 PM<br>Emergency · Pharmacy · always open</span>
+          </div>
+          <div class="vrow">
+            <span class="vk"><svg data-lucide="bus"></svg>Getting here</span>
+            <span class="vv">Exact directions will be added with the address<br>Call +91 96741 01101 — our desk will guide you in</span>
+          </div>
+          <div class="vrow">
+            <span class="vk"><svg data-lucide="phone"></svg>Contact</span>
+            <span class="vv">Appointments &amp; Emergency · +91 96741 01101<br>National ambulance · 108</span>
+          </div>
+        </div>
+        <div class="emergency">
+          <div>
+            <h3><svg data-lucide="siren"></svg> 24×7 Emergency &amp; Trauma</h3>
+            <p>Chest pain, stroke signs, accidents — don't wait. Our emergency floor never closes, with ICU backup, an on-site cath lab and a round-the-clock pharmacy steps away.</p>
+          </div>
+          <div class="emg-right">
+            <a class="emg-phone" href="tel:+919674101101"><svg data-lucide="phone"></svg>+91 96741 01101</a>
+            <p class="emg-wait">Current wait · ~<span data-er-wait>12</span> min</p>
+            <p class="emg-108">For a government ambulance, dial <b>108</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="container faq-grid">
+    <div class="reveal">
+      <p class="eyebrow"><span class="sec-num">05</span> Good to know</p>
+      <h2 class="h-serif" style="font-size:clamp(1.9rem,3.4vw,2.7rem);margin-top:16px">Before you<br><span class="it">arrive.</span></h2>
+      <p style="margin-top:18px;font-size:14.5px;color:rgba(16,46,42,.7);max-width:34ch">Something else on your mind? Our helpline answers day and night — in Hindi or English.</p>
+      <a class="link-arrow" href="tel:+919674101101" style="margin-top:22px">+91 96741 01101 <svg data-lucide="arrow-up-right"></svg></a>
+    </div>
+    <div class="reveal" id="faqList" style="--d:.1s"></div>
+  </div>
+</section>
+
+<!-- ============ Footer ============ -->
+<footer>
+  <div class="footer-ecg" aria-hidden="true">
+    <svg class="ecg" id="ecgFoot" width="1760" height="80" viewBox="0 0 1760 80"></svg>
+  </div>
+  <div class="container">
+    <div class="foot-main">
+      <div>
+        <p class="foot-word">Prime <em>Life</em><br>Hospital</p>
+        <p class="foot-legal">Super Multi Speciality Hospital Pvt. Ltd.</p>
+        <p class="foot-tag">Advanced care for Uttar Pradesh — emergency, surgery, mother &amp; child and dialysis under one roof.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="#visit">Campus &amp; parking</a></li>
+          <li><a href="#faq">Visiting hours</a></li>
+          <li><a href="#departments">Departments</a></li>
+          <li><a href="#doctors">Find a doctor</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+919674101101">Helpline · +91 96741 01101</a></li>
+          <li><a href="tel:108">Ambulance (national) · 108</a></li>
+          <li><a href="#faq">Insurance &amp; Ayushman desk</a></li>
+          <li><a href="#faq">Careers</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Health notes, monthly</h4>
+        <p style="font-size:14px;color:rgba(246,243,235,.6)">One short letter a month from our doctors. No noise, ever.</p>
+        <form class="news-form" id="newsForm">
+          <input type="email" id="newsEmail" placeholder="Your email" aria-label="Email address">
+          <button type="submit">Join <svg data-lucide="arrow-right" style="width:14px;height:14px"></svg></button>
+        </form>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 Prime Life Super Multi Speciality Hospital Pvt. Ltd. All rights reserved.</span>
+      <nav>
+        <a href="#top">Privacy</a><a href="#top">Terms</a><a href="#top">Patient rights</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ Booking modal ============ -->
+<div class="modal" id="bookModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Book an appointment">
+    <header class="modal-head">
+      <div>
+        <p class="modal-kicker">Prime Life Hospital</p>
+        <h3 class="modal-title">Book an appointment</h3>
+      </div>
+      <button class="icon-btn" data-close aria-label="Close"><svg data-lucide="x"></svg></button>
+    </header>
+    <ol class="steps" id="stepBar">
+      <li class="step"><span class="n">1</span><span class="sl">Department</span></li>
+      <li class="step"><span class="n">2</span><span class="sl">Schedule</span></li>
+      <li class="step"><span class="n">3</span><span class="sl">Details</span></li>
+      <li class="step"><span class="n">4</span><span class="sl">Confirm</span></li>
+    </ol>
+    <div class="modal-body" id="modalBody"></div>
+    <footer class="modal-foot" id="modalFoot"></footer>
+  </div>
+</div>
+
+<div class="toasts" id="toasts"></div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+/* ================= Data ================= */
+const HOSPITAL_PHONE_DISPLAY = '+91 96741 01101';
+
+const DEPTS = [
+  {id:'cardiology', icon:'heart-pulse', name:'Cardiac Sciences', tag:'Cath lab, angioplasty & prevention',
+   desc:'From preventive heart check-ups to primary angioplasty during a heart attack, our cardiac team works round the clock — and takes the time to explain every option to you and your family, in your own language.',
+   procs:['24×7 cardiac cath lab','Angiography & angioplasty','Echocardiography, TMT & Holter','Heart-failure & pacemaker clinic'], seed:'plheart'},
+  {id:'neurology', icon:'brain', name:'Neurology & Neurosurgery', tag:'Stroke, epilepsy & spine',
+   desc:'A stroke-ready ER with tight door-to-needle targets, plus epilepsy monitoring and spine surgery under one roof. Neurologists and neurosurgeons sit in the same office — so your diagnosis never waits on a referral.',
+   procs:['Stroke thrombolysis unit','Epilepsy & headache clinic','Neuro & spine surgery','EEG · EMG · Nerve studies'], seed:'plneuro'},
+  {id:'orthopedics', icon:'bone', name:'Orthopaedics & Joint Replacement', tag:'Knee, hip & sports injuries',
+   desc:'Whether it\u2019s a torn ligament on the college field or a knee replacement at seventy, our goal is the same: walk out stronger, and back to the life you had before the injury.',
+   procs:['Total knee & hip replacement','Arthroscopy & sports medicine','Trauma & fracture clinic','Physiotherapy & rehab'], seed:'plortho'},
+  {id:'obgyn', icon:'heart', name:'Obstetrics & Gynaecology', tag:'Pregnancy, birthing & women\u2019s health',
+   desc:'Hundreds of families welcome their babies with us every year — with midwife-led birthing, a high-risk pregnancy clinic and 24×7 anaesthesia & blood-bank backup for the moments that matter.',
+   procs:['Antenatal & high-risk pregnancy clinic','Painless (epidural) delivery','Laparoscopic gynae surgery','Well-woman & menopause clinic'], seed:'plbirth'},
+  {id:'pediatrics', icon:'baby', name:'Paediatrics & Neonatology', tag:'Newborns to teens · Level-III NICU',
+   desc:'A hospital can frighten a child, so our paediatric wing is built softer — gentler light, quieter halls, and nurses who can turn an injection into a game. Our NICU cares for the tiniest fighters, 24×7.',
+   procs:['Level-III NICU & PICU','Immunisation & well-child clinic','Paediatric asthma & allergy care','Child nutrition & growth clinic'], seed:'plkids'},
+  {id:'surgery', icon:'stethoscope', name:'General & Laparoscopic Surgery', tag:'Keyhole surgery, faster recovery',
+   desc:'Gallstones, hernia, appendix — most of our abdominal surgeries are done laparoscopically: smaller cuts, less pain, and home in a day or two instead of a week.',
+   procs:['Laparoscopic gallbladder & hernia','Appendix & emergency surgery','Piles, fissure & varicose clinics','Day-care surgery unit'], seed:'plsurgery'},
+  {id:'nephrology', icon:'droplets', name:'Nephrology & Dialysis', tag:'Kidney care & dialysis unit',
+   desc:'A dedicated dialysis floor with trained technicians and nephrologist supervision on every shift — because long-term dialysis should feel like a routine visit, not a crisis.',
+   procs:['Haemodialysis & SLED','Dialysis catheter & fistula care','Chronic kidney disease clinic','Kidney transplant work-up'], seed:'pldialysis'},
+  {id:'emergency', icon:'siren', name:'Emergency & Critical Care', tag:'Open 24×7 · ICU backup',
+   desc:'Accidents, chest pain, stroke — our emergency floor never closes, with ICU beds, ventilators and a round-the-clock pharmacy steps away. We publish our wait times because you deserve to know.',
+   procs:['24×7 ER & trauma bays','Medical & surgical ICU','24×7 ambulance · call ' + HOSPITAL_PHONE_DISPLAY,'Round-the-clock pharmacy & blood bank'], seed:'pler'},
+  {id:'diagnostics', icon:'scan', name:'Diagnostics & Imaging', tag:'MRI · CT · Ultrasound · Pathology',
+   desc:'Digital X-ray, ultrasound, CT and a fully automated pathology lab under one roof. Routine reports the same day; anything urgent gets a phone call from a human — in Hindi or English, whichever you prefer.',
+   procs:['1.5T MRI & CT scanner','Digital X-ray & ultrasound','Automated pathology lab','Health check-up packages'], seed:'plab'},
+];
+
+const DOCTORS = [
+  {id:1, name:'Dr. Anil Kumar Sharma', dept:'cardiology', title:'Interventional Cardiologist · Cath Lab', exp:'18 yrs experience', langs:'Hindi · English', next:'Today · 15:30', init:'AS', tint:'#D9E6DC'},
+  {id:2, name:'Dr. Farah Siddiqui', dept:'cardiology', title:'Cardiologist — Heart Failure & Echo', exp:'11 yrs experience', langs:'Hindi · English · Urdu', next:'Tomorrow · 09:30', init:'FS', tint:'#E9E2D0'},
+  {id:3, name:'Dr. Rajeev Ranjan', dept:'neurology', title:'Neurologist — Stroke & Epilepsy', exp:'15 yrs experience', langs:'Hindi · English', next:'Today · 17:00', init:'RR', tint:'#D7E3E4'},
+  {id:4, name:'Dr. S. K. Verma', dept:'neurology', title:'Neuro & Spine Surgeon', exp:'20 yrs experience', langs:'Hindi · English', next:'Thu · 11:00', init:'SV', tint:'#EADFD5'},
+  {id:5, name:'Dr. Vikram Rathore', dept:'orthopedics', title:'Joint Replacement & Sports Injury', exp:'13 yrs experience', langs:'Hindi · English', next:'Fri · 08:30', init:'VR', tint:'#D9E6DC'},
+  {id:6, name:'Dr. Meera Agarwal', dept:'obgyn', title:'OB/GYN — High-Risk Pregnancy', exp:'16 yrs experience', langs:'Hindi · English', next:'Today · 16:30', init:'MA', tint:'#E9E2D0'},
+  {id:7, name:'Dr. Kavita Singh', dept:'obgyn', title:'Gynaecologist & Laparoscopic Surgeon', exp:'9 yrs experience', langs:'Hindi · English · Bhojpuri', next:'Wed · 10:30', init:'KS', tint:'#D7E3E4'},
+  {id:8, name:'Dr. Sanjay Gupta', dept:'pediatrics', title:'Paediatrician & Neonatologist (NICU)', exp:'14 yrs experience', langs:'Hindi · English', next:'Today · 14:00', init:'SG', tint:'#EADFD5'},
+  {id:9, name:'Dr. Imran Qureshi', dept:'surgery', title:'Laparoscopic & General Surgeon', exp:'17 yrs experience', langs:'Hindi · English · Urdu', next:'Tomorrow · 12:00', init:'IQ', tint:'#D9E6DC'},
+  {id:10, name:'Dr. Pooja Nair', dept:'nephrology', title:'Nephrologist — Dialysis & CKD Care', exp:'12 yrs experience', langs:'Hindi · English · Malayalam', next:'Thu · 10:00', init:'PN', tint:'#E9E2D0'},
+  {id:11, name:'Dr. Arjun Tiwari', dept:'emergency', title:'Emergency Physician', exp:'8 yrs experience', langs:'Hindi · English · Awadhi', next:'Walk-in · 24×7', init:'AT', tint:'#D7E3E4'},
+  {id:12, name:'Dr. Nisha Yadav', dept:'diagnostics', title:'Radiologist', exp:'12 yrs experience', langs:'Hindi · English', next:'Wed · 09:00', init:'NY', tint:'#EADFD5'},
+];
+
+const QUOTES = [
+  {q:'When my father\u2019s ECG came back, the cardiologist sat with our whole family and explained everything in Hindi. No rush, no jargon. I have never seen a hospital do that.', by:'Ramesh Verma', ctx:'Cardiac care, 2024', init:'RV'},
+  {q:'The paediatric nurses turned every injection into a game. Our son now says he wants to become a doctor — here, specifically.', by:'Sunita & Ajay', ctx:'Paediatrics, 2024', init:'SA'},
+  {q:'We called at two in the morning with chest pain. The ambulance reached fast, the cath lab was ready before we were. That speed saved my father\u2019s life.', by:'Mohammad Irfan', ctx:'Emergency, 2025', init:'MI'},
+  {q:'Knee replacement at sixty-eight — and I walked the same evening. The physiotherapy team simply did not let me give up.', by:'Krishna Devi', ctx:'Orthopaedics, 2024', init:'KD'},
+];
+
+const FAQS = [
+  {q:'Do you accept Ayushman Bharat (PM-JAY) and cashless insurance?', a:'Our insurance & PM-JAY helpdesk sits right at reception. Bring your Ayushman card or policy documents with Aadhaar — the team verifies eligibility, handles pre-authorisation, and tells you about any costs upfront, never after treatment.'},
+  {q:'What are the OPD timings?', a:'OPD runs Monday to Saturday, 9:00 AM to 5:00 PM, with evening clinics for select specialities. Emergency, pharmacy and critical lab services run 24×7, every day of the year.'},
+  {q:'What should I bring for registration or admission?', a:'A photo ID (Aadhaar works), your insurance or Ayushman card, previous prescriptions and reports if any, and a list of current medicines — photos of the strips are perfect. Please arrive 15 minutes early.'},
+  {q:'When will I get my test reports?', a:'Routine pathology reports are usually ready the same day; imaging within 24 hours. Anything urgent reaches your treating doctor immediately by phone first — you will never have to chase serious news on a screen.'},
+  {q:'What are the visiting hours for admitted patients?', a:'General wards welcome visitors 11:00 AM–1:00 PM and 5:00–7:00 PM. One attendant may stay overnight. ICU visits are short and arranged with the care team so patients can rest and recover.'},
+];
+
+const SPOTS = {
+  emergency:  {name:'Emergency & Trauma Wing', desc:'East side of the campus · Open 24×7. Ambulance bay at the rear — call ' + HOSPITAL_PHONE_DISPLAY + ' or dial 108 for a government ambulance.', c:'#C0402F'},
+  reception:  {name:'Reception & OPD', desc:'OPD Block, ground floor · Registration, cashless insurance & Ayushman Bharat helpdesk. Mon–Sat, 9:00 AM–5:00 PM.', c:'#2E7D64'},
+  pharmacy:   {name:'24×7 Pharmacy', desc:'Beside the main gate · Open round the clock for OPD, inpatients and discharged patients.', c:'#102E2A'},
+  diagnostics:{name:'Lab & Diagnostics', desc:'Diagnostics block · X-ray, ultrasound, CT, ECG & pathology. Fasting blood samples collected 7:00–10:00 AM.', c:'#8a6d3b'},
+  parking:    {name:'Patient Parking', desc:'Just inside the main gate, left side · Free for OPD visitors, with staff assistance for elderly patients.', c:'#6b7f8c'},
+};
+
+/* ================= Helpers ================= */
+const $  = (s, c=document) => c.querySelector(s);
+const $$ = (s, c=document) => [...c.querySelectorAll(s)];
+const icons = () => window.lucide && lucide.createIcons();
+const deptById = id => DEPTS.find(d => d.id === id);
+const docById  = id => DOCTORS.find(d => d.id === id);
+const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+function toast(msg, icon='check'){
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.innerHTML = `<svg data-lucide="${icon}"></svg><span>${msg}</span>`;
+  $('#toasts').appendChild(t);
+  icons();
+  setTimeout(() => { t.classList.add('out'); setTimeout(() => t.remove(), 320); }, 3600);
+}
+
+/* ================= ECG line ================= */
+function buildECG(svg, stroke){
+  const beat = 'l40 0 q6 -8 12 0 l18 0 l6 6 l10 -34 l10 46 l8 -18 l6 0 q10 -12 20 0 l90 0';
+  let d = 'M0 40 ';
+  for (let i = 0; i < 8; i++) d += beat + ' ';
+  svg.innerHTML = `<path d="${d}" fill="none" stroke="${stroke}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
+}
+buildECG($('#ecgHero'), 'rgba(46,125,100,.85)');
+buildECG($('#ecgFoot'), '#8FD0B0');
+
+/* ================= Marquee ================= */
+(function(){
+  const items = [...DEPTS.map(d => d.name), 'Cashless insurance & PM-JAY desk', '24×7 Emergency · Pharmacy · Lab', 'Same-day OPD appointments'];
+  const html = items.map(t => `<span class="mq-item">${t}<svg data-lucide="activity"></svg></span>`).join('');
+  $('#mqTrack').innerHTML = html + html;
+})();
+
+/* ================= Departments ================= */
+(function(){
+  const list = $('#deptList');
+  list.innerHTML = DEPTS.map((d, i) => `
+    <div class="dept-row" data-dept="${d.id}">
+      <button class="dept-head" aria-expanded="false">
+        <span class="dept-num">${String(i+1).padStart(2,'0')}</span>
+        <span class="dept-name">${d.name}</span>
+        <span class="dept-tag">${d.tag}</span>
+        <span class="dept-plus"><svg data-lucide="plus"></svg></span>
+      </button>
+      <div class="dept-body"><div class="dept-body-in">
+        <div class="dept-body-grid">
+          <div>
+            <p>${d.desc}</p>
+            <div class="dept-actions">
+              <button class="btn btn-sm" data-book data-dept="${d.id}">Book in ${d.name.split(' ')[0]} <svg data-lucide="arrow-right"></svg></button>
+              <a class="link-arrow" href="#doctors" data-goto-docs="${d.id}">Meet the doctors <svg data-lucide="arrow-up-right"></svg></a>
+            </div>
+          </div>
+          <ul class="dept-list">${d.procs.map(p => `<li>${p}</li>`).join('')}</ul>
+        </div>
+      </div></div>
+    </div>
+  `).join('');
+
+  $$('.dept-row', list).forEach(row => {
+    $('.dept-head', row).addEventListener('click', () => {
+      const open = row.classList.contains('open');
+      $$('.dept-row.open', list).forEach(r => { r.classList.remove('open'); $('.dept-head', r).setAttribute('aria-expanded','false'); });
+      if (!open){ row.classList.add('open'); $('.dept-head', row).setAttribute('aria-expanded','true'); }
+    });
+  });
+
+  if (matchMedia('(pointer:fine)').matches){
+    const float = $('#deptFloat');
+    let tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
+    const loop = () => {
+      cx += (tx - cx) * .14; cy += (ty - cy) * .14;
+      float.style.left = cx + 'px'; float.style.top = cy + 'px';
+      if (float.classList.contains('show')) raf = requestAnimationFrame(loop);
+    };
+    $$('.dept-row', list).forEach(row => {
+      const head = $('.dept-head', row);
+      head.addEventListener('mouseenter', () => {
+        float.src = `https://picsum.photos/seed/${deptById(row.dataset.dept).seed}/500/380.jpg`;
+        float.classList.add('show');
+        cancelAnimationFrame(raf); raf = requestAnimationFrame(loop);
+      });
+      head.addEventListener('mouseleave', () => float.classList.remove('show'));
+      head.addEventListener('mousemove', e => { tx = e.clientX + 28; ty = e.clientY - 90; });
+    });
+  }
+})();
+
+/* ================= Doctors ================= */
+let docFilter = 'all';
+function renderChips(){
+  const depts = ['all', ...new Set(DOCTORS.map(d => d.dept))];
+  $('#docChips').innerHTML = depts.map(id => `
+    <button class="chip ${id === docFilter ? 'active' : ''}" data-filter="${id}">
+      ${id === 'all' ? 'All specialities' : deptById(id).name}
+    </button>
+  `).join('');
+}
+function renderDocs(){
+  const docs = docFilter === 'all' ? DOCTORS : DOCTORS.filter(d => d.dept === docFilter);
+  $('#docsMeta').textContent = `Showing ${docs.length} of ${DOCTORS.length} doctors · drag or use the arrows`;
+  $('#docsTrack').innerHTML = docs.map((d, i) => {
+    const dep = deptById(d.dept);
+    return `
+    <article class="doc-card" style="animation-delay:${i * .05}s">
+      <div class="doc-top">
+        <span class="avatar" style="background:${d.tint}">${d.init}</span>
+        <div>
+          <h3 class="doc-name">${d.name}</h3>
+          <span class="doc-spec">${dep.name}</span>
+        </div>
+      </div>
+      <p class="doc-title">${d.title} · ${d.exp}<br><span style="font-size:12.5px;color:rgba(16,46,42,.5)">${d.langs}</span></p>
+      <div class="doc-foot">
+        <span class="doc-next"><svg data-lucide="calendar"></svg>Next: <b>${d.next}</b></span>
+        <button class="btn btn-sm" data-book data-dept="${d.dept}" data-doctor="${d.id}">Book</button>
+      </div>
+    </article>`;
+  }).join('');
+  icons();
+}
+renderChips(); renderDocs();
+ $('#docChips').addEventListener('click', e => {
+  const chip = e.target.closest('.chip'); if (!chip) return;
+  docFilter = chip.dataset.filter;
+  renderChips(); renderDocs();
+});
+const track = $('#docsTrack');
+ $('#docsPrev').addEventListener('click', () => track.scrollBy({left:-340, behavior:'smooth'}));
+ $('#docsNext').addEventListener('click', () => track.scrollBy({left: 340, behavior:'smooth'}));
+let down = false, sx = 0, sl = 0, moved = 0;
+track.addEventListener('pointerdown', e => {
+  down = true; moved = 0; sx = e.clientX; sl = track.scrollLeft;
+  track.classList.add('dragging'); track.setPointerCapture(e.pointerId);
+});
+track.addEventListener('pointermove', e => {
+  if (!down) return;
+  const dx = e.clientX - sx; moved = Math.max(moved, Math.abs(dx));
+  track.scrollLeft = sl - dx;
+});
+['pointerup','pointercancel'].forEach(ev => track.addEventListener(ev, () => { down = false; track.classList.remove('dragging'); }));
+track.addEventListener('click', e => { if (moved > 8){ e.preventDefault(); e.stopPropagation(); } }, true);
+document.addEventListener('click', e => {
+  const a = e.target.closest('[data-goto-docs]'); if (!a) return;
+  docFilter = a.dataset.gotoDocs; renderChips(); renderDocs();
+});
+
+/* ================= Stories slider ================= */
+(function(){
+  const stage = $('#quoteStage'), dots = $('#qDots');
+  stage.innerHTML = QUOTES.map((q, i) => `
+    <div class="quote ${i===0?'on':''}">
+      <blockquote><span class="qm">\u201C</span> ${q.q} <span class="qm">\u201D</span></blockquote>
+      <div class="quote-by">
+        <span class="avatar">${q.init}</span>
+        <div><b>${q.by}</b><small>${q.ctx}</small></div>
+      </div>
+    </div>
+  `).join('');
+  dots.innerHTML = QUOTES.map((_, i) => `<span class="qdot ${i===0?'on':''}"></span>`).join('');
+  let cur = 0, timer;
+  const go = n => {
+    cur = (n + QUOTES.length) % QUOTES.length;
+    $$('.quote', stage).forEach((q, i) => q.classList.toggle('on', i === cur));
+    $$('.qdot', dots).forEach((d, i) => d.classList.toggle('on', i === cur));
+  };
+  const auto = () => { clearInterval(timer); timer = setInterval(() => go(cur + 1), 6500); };
+  $('#qPrev').addEventListener('click', () => { go(cur - 1); auto(); });
+  $('#qNext').addEventListener('click', () => { go(cur + 1); auto(); });
+  $('#stories').addEventListener('mouseenter', () => clearInterval(timer));
+  $('#stories').addEventListener('mouseleave', auto);
+  auto();
+})();
+
+/* ================= Map spots ================= */
+(function(){
+  $('#spotList').innerHTML = Object.entries(SPOTS).map(([k, s]) => `
+    <button class="spot ${k==='emergency'?'active':''}" data-spot="${k}" style="--c:${s.c}">
+      <span class="spot-dot"></span>
+      <span><b>${s.name}</b><small>${s.desc}</small></span>
+    </button>
+  `).join('');
+  const setActive = k => {
+    $$('.spot').forEach(s => s.classList.toggle('active', s.dataset.spot === k));
+    $$('.map-pin').forEach(p => p.classList.toggle('active', p.dataset.spot === k));
+  };
+  setActive('emergency');
+  document.addEventListener('click', e => {
+    const t = e.target.closest('.spot, .map-pin'); if (!t) return;
+    setActive(t.dataset.spot);
+  });
+})();
+
+/* ================= FAQ ================= */
+(function(){
+  $('#faqList').innerHTML = FAQS.map(f => `
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        ${f.q}
+        <span class="dept-plus"><svg data-lucide="plus"></svg></span>
+      </button>
+      <div class="faq-a"><div class="faq-a-in"><p>${f.a}</p></div></div>
+    </div>
+  `).join('');
+  $$('.faq-item').forEach(item => {
+    $('.faq-q', item).addEventListener('click', () => {
+      const open = item.classList.contains('open');
+      $$('.faq-item.open').forEach(i => { i.classList.remove('open'); $('.faq-q', i).setAttribute('aria-expanded','false'); });
+      if (!open){ item.classList.add('open'); $('.faq-q', i === item ? $('.faq-q', item) : null); }
+    });
+  });
+  // correct expand logic (single-open accordion)
+  $$('.faq-item').forEach(item => {
+    $('.faq-q', item).addEventListener('click', () => {
+      const open = item.classList.contains('open');
+      $$('.faq-item.open').forEach(i => { i.classList.remove('open'); $('.faq-q', i).setAttribute('aria-expanded','false'); });
+      if (!open){ item.classList.add('open'); $('.faq-q', item).setAttribute('aria-expanded','true'); }
+    });
+  });
+})();
+
+/* ================= Live ER wait ================= */
+(function(){
+  let wait = 12;
+  const els = $$('[data-er-wait]');
+  setInterval(() => {
+    wait = Math.min(45, Math.max(5, wait + (Math.random() > .5 ? 1 : -1) * Math.ceil(Math.random() * 3)));
+    els.forEach(el => el.textContent = wait);
+  }, 8000);
+})();
+
+/* ================= Header / menu ================= */
+const head = $('#siteHead');
+addEventListener('scroll', () => head.classList.toggle('scrolled', scrollY > 10), {passive:true});
+const mmenu = $('#mmenu');
+const setMenu = open => {
+  mmenu.classList.toggle('open', open);
+  mmenu.setAttribute('aria-hidden', String(!open));
+  document.body.style.overflow = open ? 'hidden' : '';
+};
+ $('#burger').addEventListener('click', () => setMenu(true));
+ $('#mmenuClose').addEventListener('click', () => setMenu(false));
+ $$('.mmenu nav a, .mmenu-foot [data-book]').forEach(el => el.addEventListener('click', () => setMenu(false)));
+
+/* ================= Scroll reveals & counters ================= */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+}), {threshold:.12});
+ $$('.reveal').forEach(el => io.observe(el));
+
+const cio = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const el = e.target, target = +el.dataset.count;
+  const t0 = performance.now(), dur = 1600;
+  const tick = t => {
+    const p = Math.min(1, (t - t0) / dur), ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(target * ease);
+    if (p < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+  cio.unobserve(el);
+}), {threshold:.5});
+ $$('[data-count]').forEach(el => cio.observe(el));
+
+/* ================= Booking modal ================= */
+const state = { dept:null, doctor:0, date:null, time:null, name:'', phone:'', email:'', notes:'' };
+let step = 1;
+const modal = $('#bookModal');
+
+const DEP_D = d => d ? d.toLocaleDateString('en-GB', {weekday:'short', day:'numeric', month:'short'}) : '';
+function days(){
+  return Array.from({length:14}, (_, i) => {
+    const d = new Date(); d.setDate(d.getDate() + i);
+    return d;
+  });
+}
+function slots(){
+  const out = [];
+  const dayIdx = state.date ? Math.round((state.date - new Date().setHours(0,0,0,0)) / 864e5) : 0;
+  for (let h = 9; h <= 16; h++) for (const m of ['00','30']){
+    const idx = (h - 9) * 2 + (m === '30' ? 1 : 0);
+    const seed = (state.doctor * 7 + dayIdx * 13 + idx * 5) % 9;
+    const h12 = h % 12 === 0 ? 12 : h % 12;
+    out.push({ label:`${h12}:${m} ${h >= 12 ? 'PM' : 'AM'}`, taken: seed < 2 });
+  }
+  return out;
+}
+function docRow(d, sel){
+  return `
+  <button class="docrow ${sel ? 'sel' : ''}" data-pick-doc="${d.id}">
+    <span class="avatar" style="background:${d.tint || '#CBDACD'}">${d.init}</span>
+    <span><b>${d.name}</b><small>${d.title}</small></span>
+    <span class="dr-next">${d.next || ''}</span>
+  </button>`;
+}
+
+function renderStep(){
+  const body = $('#modalBody'), foot = $('#modalFoot');
+  $$('#stepBar .step').forEach((s, i) => {
+    s.classList.toggle('on', i + 1 === step);
+    s.classList.toggle('done', i + 1 < step);
+    $('.n', s).innerHTML = i + 1 < step
+      ? '<svg data-lucide="check" style="width:12px;height:12px"></svg>' : (i + 1);
+  });
+
+  if (step === 1){
+    body.innerHTML = `
+      <p class="blabel">Which department do you need?</p>
+      <div class="pillgrid">
+        ${DEPTS.map(d => `
+          <button class="pill ${state.dept === d.id ? 'sel' : ''}" data-pick-dept="${d.id}">
+            <svg data-lucide="${d.icon}"></svg>${d.name}
+          </button>
+        `).join('')}
+      </div>
+      <p class="blabel" style="margin-top:26px">Reason for visit <span style="font-weight:400;text-transform:none;letter-spacing:0;color:rgba(16,46,42,.5)">(optional)</span></p>
+      <div class="field"><textarea id="fReason" placeholder="A line or two helps us prepare — e.g. \u201Cchest tightness while climbing stairs for a week\u201D">${esc(state.notes)}</textarea></div>
+      <p class="bnote"><svg data-lucide="siren"></svg>For urgent symptoms — chest pain, stroke signs, heavy bleeding — call ${HOSPITAL_PHONE_DISPLAY} or dial <b>108</b> for an ambulance.</p>
+    `;
+    foot.innerHTML = `
+      <button class="btn btn-ghost" data-close>Cancel</button>
+      <button class="btn" id="mNext">Choose a time <svg data-lucide="arrow-right"></svg></button>
+    `;
+  }
+
+  if (step === 2){
+    const docs = DOCTORS.filter(d => d.dept === state.dept);
+    body.innerHTML = `
+      <p class="blabel">With whom?</p>
+      <div class="doclist">
+        ${docRow({id:0, name:'First available doctor', title:'Shortest wait — matched by schedule', tint:'#CBDACD', init:'FA', next:'Soonest'}, state.doctor === 0)}
+        ${docs.map(d => docRow(d, state.doctor === d.id)).join('')}
+      </div>
+      <p class="blabel">Pick a day</p>
+      <div class="daystrip">
+        ${days().map((d, i) => `
+          <button class="day ${state.date && +state.date === +d ? 'sel' : ''}" data-pick-day="${i}">
+            <small>${i === 0 ? 'Today' : i === 1 ? 'Tmrw' : d.toLocaleDateString('en-GB',{weekday:'short'})}</small>
+            <b>${d.getDate()}</b>
+          </button>
+        `).join('')}
+      </div>
+      <p class="blabel">Available times ${state.date ? '· ' + DEP_D(state.date) : ''}</p>
+      ${state.date ? `
+        <div class="slotgrid">
+          ${slots().map(s => `
+            <button class="slot ${state.time === s.label ? 'sel' : ''}" data-pick-slot="${s.label}" ${s.taken ? 'disabled' : ''}>${s.label}</button>
+          `).join('')}
+        </div>
+      ` : `<p class="slot-empty">Select a day above to see open times.</p>`}
+    `;
+    foot.innerHTML = `
+      <button class="btn btn-ghost" id="mBack"><svg data-lucide="chevron-left" style="width:16px;height:16px"></svg> Back</button>
+      <button class="btn" id="mNext">Your details <svg data-lucide="arrow-right"></svg></button>
+    `;
+  }
+
+  if (step === 3){
+    body.innerHTML = `
+      <div class="frow">
+        <div class="field" id="fw-name"><label for="fName">Patient's full name</label>
+          <input id="fName" value="${esc(state.name)}" placeholder="e.g. Aditi Sharma" autocomplete="name">
+          <span class="err">Please enter the patient's name.</span></div>
+        <div class="field" id="fw-phone"><label for="fPhone">Mobile number</label>
+          <input id="fPhone" value="${esc(state.phone)}" placeholder="+91 00000 00000" autocomplete="tel" inputmode="tel">
+          <span class="err">A valid mobile number helps us confirm.</span></div>
+      </div>
+      <div class="field" id="fw-email"><label for="fEmail">Email <span style="font-weight:400;color:rgba(16,46,42,.5)">(optional)</span></label>
+        <input id="fEmail" value="${esc(state.email)}" placeholder="you@example.com" autocomplete="email">
+        <span class="err">That email doesn\u2019t look right.</span></div>
+      <p class="blabel">Notes for your care team <span style="font-weight:400;text-transform:none;letter-spacing:0;color:rgba(16,46,42,.5)">(optional)</span></p>
+      <div class="field"><textarea id="fNotes" placeholder="Allergies, wheelchair needs, questions\u2026">${esc(state.notes)}</textarea></div>
+      <p class="bnote"><svg data-lucide="shield-check"></svg>This is a demo booking — nothing is sent anywhere; your details stay in this browser tab.</p>
+    `;
+    foot.innerHTML = `
+      <button class="btn btn-ghost" id="mBack"><svg data-lucide="chevron-left" style="width:16px;height:16px"></svg> Back</button>
+      <button class="btn" id="mNext">Review booking <svg data-lucide="arrow-right"></svg></button>
+    `;
+  }
+
+  if (step === 4){
+    const doc = state.doctor ? docById(state.doctor) : null;
+    body.innerHTML = `
+      <div class="review">
+        <div class="rev-row"><span class="rk">Department</span><b>${deptById(state.dept).name}</b><button class="rev-edit" data-edit="1">Change</button></div>
+        <div class="rev-row"><span class="rk">Doctor</span><b>${doc ? doc.name : 'First available'}</b><button class="rev-edit" data-edit="2">Change</button></div>
+        <div class="rev-row"><span class="rk">When</span><b>${DEP_D(state.date)} · ${state.time}</b><button class="rev-edit" data-edit="2">Change</button></div>
+        <div class="rev-row"><span class="rk">Patient</span><b>${esc(state.name)}</b><button class="rev-edit" data-edit="3">Change</button></div>
+        <div class="rev-row"><span class="rk">Mobile</span><b>${esc(state.phone)}</b><button class="rev-edit" data-edit="3">Change</button></div>
+      </div>
+      <p class="bnote"><svg data-lucide="clock"></svg>Please arrive 15 minutes early with your ID and insurance / Ayushman card. To reschedule, call ${HOSPITAL_PHONE_DISPLAY} any time.</p>
+    `;
+    foot.innerHTML = `
+      <button class="btn btn-ghost" id="mBack"><svg data-lucide="chevron-left" style="width:16px;height:16px"></svg> Back</button>
+      <button class="btn" id="mConfirm" style="background:var(--green)">Confirm appointment <svg data-lucide="check"></svg></button>
+    `;
+  }
+
+  if (step === 5){
+    const ref = 'PLH-' + Math.random().toString(36).slice(2, 7).toUpperCase();
+    body.innerHTML = `
+      <div class="success">
+        <div class="big-check"><svg data-lucide="check"></svg></div>
+        <p class="modal-title" style="font-size:24px">You\u2019re booked.</p>
+        <div class="refcode">${ref}</div>
+        <p>${deptById(state.dept).name} · ${state.doctor ? docById(state.doctor).name : 'First available doctor'}<br>
+        ${DEP_D(state.date)} at ${state.time} · Prime Life campus, Uttar Pradesh</p>
+        <p style="margin-top:14px;font-size:13px">Please note your reference <b>${ref}</b>. A confirmation would normally follow by SMS and call.</p>
+      </div>
+    `;
+    foot.innerHTML = `<button class="btn" data-close style="margin:0 auto">Done</button>`;
+  }
+  icons();
+}
+
+function validate3(){
+  state.name  = $('#fName').value.trim();
+  state.phone = $('#fPhone').value.trim();
+  state.email = $('#fEmail').value.trim();
+  state.notes = $('#fNotes').value.trim();
+  let ok = true;
+  const mark = (w, bad) => { $(w).classList.toggle('bad', bad); if (bad) ok = false; };
+  mark('#fw-name',  state.name.length < 2);
+  mark('#fw-phone', !/^[\d+][\d\s()\-]{6,}$/.test(state.phone));
+  mark('#fw-email', state.email !== '' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(state.email));
+  return ok;
+}
+
+function openBooking(preset = {}){
+  Object.assign(state, {
+    dept: preset.dept || state.dept,
+    doctor: preset.doctor || 0,
+    date: null, time: null,
+  });
+  step = 1;
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+  renderStep();
+}
+function closeBooking(){
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-book]');
+  if (b){ e.preventDefault(); openBooking({dept: b.dataset.dept, doctor: b.dataset.doctor ? +b.dataset.doctor : undefined}); return; }
+  if (e.target.closest('[data-close]')) closeBooking();
+});
+ $('#stamp').addEventListener('click', e => { e.preventDefault(); openBooking({}); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape'){ closeBooking(); setMenu(false); } });
+
+ $('#modalBody').addEventListener('click', e => {
+  const dept = e.target.closest('[data-pick-dept]');
+  if (dept){ state.dept = dept.dataset.pickDept; state.doctor = 0; renderStep(); return; }
+  const doc = e.target.closest('[data-pick-doc]');
+  if (doc){ state.doctor = +doc.dataset.pickDoc; renderStep(); return; }
+  const day = e.target.closest('[data-pick-day]');
+  if (day){ const d = days()[+day.dataset.pickDay]; state.date = new Date(d); state.time = null; renderStep(); return; }
+  const slot = e.target.closest('[data-pick-slot]');
+  if (slot){ state.time = slot.dataset.pickSlot; renderStep(); return; }
+  const edit = e.target.closest('[data-edit]');
+  if (edit){ step = +edit.dataset.edit; renderStep(); }
+});
+ $('#modalBody').addEventListener('input', e => {
+  if (e.target.id === 'fReason') state.notes = e.target.value;
+});
+ $('#modalFoot').addEventListener('click', e => {
+  if (e.target.closest('#mBack') && step > 1){ step--; renderStep(); return; }
+  if (e.target.closest('#mNext')){
+    if (step === 1){
+      if (!state.dept){ toast('Choose a department to continue', 'info'); return; }
+      state.notes = $('#fReason')?.value.trim() ?? state.notes;
+      step = 2;
+    } else if (step === 2){
+      if (!state.date || !state.time){ toast('Pick a day and a time slot', 'info'); return; }
+      step = 3;
+    } else if (step === 3){
+      if (!validate3()){ toast('A couple of fields need attention', 'info'); return; }
+      step = 4;
+    }
+    renderStep();
+    return;
+  }
+  if (e.target.closest('#mConfirm')){
+    step = 5; renderStep();
+    toast('Appointment confirmed — see you soon');
+  }
+});
+
+/* ================= Newsletter ================= */
+ $('#newsForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const v = $('#newsEmail').value.trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){ toast('Please enter a valid email', 'info'); return; }
+  $('#newsEmail').value = '';
+  toast('You\u2019re on the list — first letter next month');
+});
+
+icons();
+</script>
+</body>
+</html>
